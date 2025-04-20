@@ -1,0 +1,49 @@
+<MudDialog>
+    <DialogContent>
+        <MudSimpleTable Striped Bordered>
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Setting</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Title</td>
+                    <td>
+                        <MudTextField @bind-Value="Category.CategoryName" Label="Title" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Color</td>
+                    <td>
+                        <MudSelect @bind-Value="Category.Color" T="MudBlazor.Color">
+                            <MudSelectItem Value="Color.Default">None</MudSelectItem>
+                            <MudSelectItem Value="Color.Error"><MudText Color="Color.Error">Red</MudText></MudSelectItem>
+                            <MudSelectItem Value="Color.Warning"><MudText Color="Color.Warning">Yellow</MudText></MudSelectItem>
+                            <MudSelectItem Value="Color.Success"><MudText Color="Color.Success">Green</MudText></MudSelectItem>
+                            <MudSelectItem Value="Color.Info"><MudText Color="Color.Info">Blue</MudText></MudSelectItem>
+                            <MudSelectItem Value="Color.Primary"><MudText Color="Color.Primary">Purple</MudText></MudSelectItem>
+                            <MudSelectItem Value="Color.Secondary"><MudText Color="Color.Secondary">Pink</MudText></MudSelectItem>
+                            <MudSelectItem Value="Color.Dark"><MudText Color="Color.Dark">Dark</MudText></MudSelectItem>
+                        </MudSelect>
+                    </td>
+                </tr>
+            </tbody>
+        </MudSimpleTable>
+    </DialogContent>
+    <DialogActions>
+        <MudButton Color="Color.Info" Variant="Variant.Filled" Disabled="string.IsNullOrEmpty(Category.CategoryName)" OnClick="Submit">Create</MudButton>
+        <MudButton Color="Color.Default" Variant="Variant.Filled" OnClick="Cancel">Cancel</MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+    [CascadingParameter] MudDialogInstance MudDialog { get; set; }
+    BlogCategory Category { get; set; } = new BlogCategory();
+    void Submit()
+    {
+        MudDialog.Close(DialogResult.Ok(Category));
+    }
+    void Cancel() => MudDialog.Close(DialogResult.Cancel());
+}

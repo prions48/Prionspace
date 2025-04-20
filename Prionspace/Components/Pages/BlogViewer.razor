@@ -1,5 +1,7 @@
 @inject BlogService blogService
 @inject NavigationManager navManager
+@inject IDialogService dialogService
+@using Prionspace.Components.Pages.Dialogs
 
 @if (User?.UserID == Blog.UserID)
 {
@@ -33,6 +35,43 @@
     </MudCardContent>
 </MudCard>
 
+<MudCard>
+    <MudCardHeader>Categories</MudCardHeader>
+    <MudCardContent>
+        <MudSimpleTable Striped>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Color</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (BlogCategory category in Blog.Categories)
+                {
+                    <tr>
+                        <td>@category.CategoryName</td>
+                        <td>
+                            <MudChip Text="@category.Color.ToString()" Color="@category.Color" T="string" />
+                        </td>
+                        <td>
+                            <MudIconButton Icon="@Icons.Material.Filled.DeleteForever" Color="Color.Error" OnClick="() => DeleteCategory(category)" />
+                        </td>
+                    </tr>
+                }
+                @if (Blog.Categories.Count < 10)
+                {
+                    <tr>
+                        <td colspan="3">
+                            <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="CreateCategory">Create New Category</MudButton>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </MudSimpleTable>
+    </MudCardContent>
+</MudCard>
+
 @code {
     [CascadingParameter] public BlogUser? User { get; set; }
     [Parameter] public Blog Blog { get; set; }
@@ -47,5 +86,28 @@
         };
         blogService.CreatePost(post);
         navManager.NavigateTo($"/blog/{Blog.BlogURL}/{post.ID}", true);
+    }
+    private void DeleteCategory(BlogCategory category)
+    {
+        Blog.Categories.Remove(category);
+        blogService.DeleteCategory(category);
+    }
+    private async Task CreateCategory()
+    {
+        var options = new DialogOptions();
+        options.CloseOnEscapeKey = true;
+        var parameters = new DialogParameters();
+        var dialog = dialogService.Show<CategoryCreator>("Create Category", parameters, options);
+        var result = await dialog.Result;
+        if (result != null && !result.Canceled)
+        {
+            BlogCategory? category = result.Data as BlogCategory;
+            if (category != null)
+            {
+                category.BlogID = Blog.ID;
+                blogService.CreateCategory(category);
+                Blog.Categories.Add(category);
+            }
+        }
     }
 }

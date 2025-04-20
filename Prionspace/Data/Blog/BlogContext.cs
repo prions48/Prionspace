@@ -14,5 +14,6 @@ namespace Prionspace.Data.Blog
         public DbSet<BlogPostComment> BlogPostComments { get; set; }
         public DbSet<BlogTag> BlogTags { get; set; }
         public DbSet<BlogCategory> BlogCategories { get; set; }
+        public DbSet<BlogPostCategory> BlogPostCategories { get; set; }
     }
 }

@@ -33,6 +33,7 @@ namespace Prionspace.Data.Blog
             if (blog != null)
             {
                 blog.Posts = _context.BlogPosts.Where(e => e.BlogID == blog.ID).ToList();
+                blog.Categories = _context.BlogCategories.Where(e => e.BlogID == blog.ID).ToList();
             }
             return blog;
         }
@@ -57,8 +58,14 @@ namespace Prionspace.Data.Blog
                 }
                 List<BlogPostComment> comments = _context.BlogPostComments.Where(e => e.BlogPostID == post.ID).ToList();
                 post.Comments = LoadComments(null, comments);
+                post.Categories = LoadCategories(post.ID);
             }
             return post;
+        }
+        private List<BlogCategory> LoadCategories(Guid postid)
+        {
+            List<BlogPostCategory> pcs = _context.BlogPostCategories.Where(e => e.PostID == postid).ToList();
+            return _context.BlogCategories.Where(e => pcs.Select(f => f.CategoryID).Contains(e.ID)).ToList();
         }
         private List<BlogPostComment> LoadComments(Guid? parentcommentid, List<BlogPostComment> comments)
         {
@@ -96,7 +103,30 @@ namespace Prionspace.Data.Blog
             _context.BlogPosts.Update(post);
             _context.SaveChanges();
         }
-
+        public void CreatePostCategory(BlogPostCategory pc)
+        {
+            _context.BlogPostCategories.Add(pc);
+            _context.SaveChanges();
+        }
+        public void DeletePostCategory(Guid postid, Guid catid)
+        {
+            List<BlogPostCategory> pcs = _context.BlogPostCategories.Where(e => e.CategoryID == catid && e.PostID == postid).ToList();
+            foreach (BlogPostCategory cat in pcs)
+            {
+                _context.BlogPostCategories.Remove(cat);
+            }
+            _context.SaveChanges();
+        }
+        public void CreateCategory(BlogCategory category)
+        {
+            _context.BlogCategories.Add(category);
+            _context.SaveChanges();
+        }
+        public void DeleteCategory(BlogCategory category)
+        {
+            _context.BlogCategories.Remove(category);
+            _context.SaveChanges();
+        }
         #endregion
 
         public BlogUser GetOrCreateBlogUser(Auth0User user)

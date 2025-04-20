@@ -51,6 +51,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Db3VudGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/prions/Coding/Prionspace/Prionspace/Components/Pages/Dialogs/CategoryCreator.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9EaWFsb2dzL0NhdGVnb3J5Q3JlYXRvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/prions/Coding/Prionspace/Prionspace/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9FcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

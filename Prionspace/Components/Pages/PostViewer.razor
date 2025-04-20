@@ -1,47 +1,75 @@
 @inject BlogService blogService
 
-<MudCard Elevation="1" Outlined>
-    <MudCardHeader>
-        @if (Editing)
-        {
-            <MudTextField @bind-Value="EditTitle" Label="Title" />
-        }
-        else
-        {
-            @Post.PostTitle
-        }
-    </MudCardHeader>
-    <MudCardContent>
-        @if (Editing)
-        {
-            <MudTextField @bind-Value="EditText" Lines="10" Label="Post Body" />
-        }
-        else
-        {
-            @Post.PostBody
-        }
-    </MudCardContent>
-    <MudCardActions>
-        @if (Editing)
-        {
-            <MudButton Variant="Variant.Filled" Color="Color.Default" OnClick="Cancel">Cancel</MudButton>
-            @if (Post.Status == PostStatus.Draft)
+<MudStack>
+    <MudCard Elevation="1" Outlined>
+        <MudCardHeader>
+            @if (Editing)
             {
-                <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="SaveProgress">Save Progress</MudButton>
+                <MudTextField @bind-Value="EditTitle" Label="Title" />
             }
-            <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="Publish">Publish</MudButton>
-        }
-        else if (Editable)
-        {
-            <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="Edit">Edit</MudButton>
-        }
-    </MudCardActions>
-</MudCard>
+            else
+            {
+                @Post.PostTitle
+            }
+        </MudCardHeader>
+        <MudCardContent>
+            @if (Editing)
+            {
+                <MudTextField @bind-Value="EditText" Lines="10" Label="Post Body" />
+            }
+            else
+            {
+                @Post.PostBody
+            }
+        </MudCardContent>
+        <MudCardActions>
+            @if (Editing)
+            {
+                <MudButton Variant="Variant.Filled" Color="Color.Default" OnClick="Cancel">Cancel</MudButton>
+                @if (Post.Status == PostStatus.Draft)
+                {
+                    <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="SaveProgress">Save Progress</MudButton>
+                }
+                <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="Publish">Publish</MudButton>
+            }
+            else if (Editable)
+            {
+                <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="Edit">Edit</MudButton>
+            }
+        </MudCardActions>
+    </MudCard>
+    <MudCard Outlined>
+        <MudCardHeader>Categories & Tags</MudCardHeader>
+        <MudCardContent>
+            @if (Post.Categories.Count > 0)
+            {
+                <MudStack Row>
+                    <MudChipSet T="BlogCategory" OnClose="DeleteCategory" AllClosable="Editing">
+                        @foreach (BlogCategory category in Post.Categories)
+                        {
+                            <MudChip Value="category" Color="@category.Color" Text="@category.CategoryName" Variant="Variant.Filled" />
+                        }
+                    </MudChipSet>
+                </MudStack>
+            }
+            <MudStack Row>
+                <MudSelect @bind-Value="SelectedCategory" T="BlogCategory">
+                    @foreach (BlogCategory category in Categories.Where(e => !Post.Categories.Select(f => f.ID).Contains(e.ID)))
+                    {
+                        <MudSelectItem Value="@category">@category.CategoryName</MudSelectItem>
+                    }
+                </MudSelect>
+                <MudButton OnClick="AddCategory" Variant="Variant.Filled" Color="Color.Info">Add</MudButton>
+            </MudStack>
+        </MudCardContent>
+    </MudCard>
+</MudStack>
 
 @code {
     [CascadingParameter] public BlogUser User { get; set; }
     [Parameter] public BlogPost Post { get; set; }
     [Parameter] public bool Editable { get; set; }
+    [Parameter] public List<BlogCategory> Categories { get; set; } = [];
     protected override void OnInitialized()
     {
         if (Post.Status == PostStatus.Draft)
@@ -76,5 +104,31 @@
         EditText = Post.PostBody;
         EditTitle = Post.PostTitle;
         Editing = true;
+    }
+    BlogCategory? SelectedCategory = null;
+    private void AddCategory()
+    {
+        if (SelectedCategory != null)
+        {
+            BlogPostCategory newpc = new BlogPostCategory()
+            {
+                PostID = Post.ID,
+                CategoryID = SelectedCategory.ID
+            };
+            blogService.CreatePostCategory(newpc);
+            Post.Categories.Add(SelectedCategory);
+            SelectedCategory = null;
+        }
+    }
+    private void DeleteCategory(MudChip<BlogCategory> chip)
+    {
+        if (chip.Value == null)
+            return;
+        BlogCategory? category = Post.Categories.FirstOrDefault(e => e.ID == chip.Value.ID);
+        if (category != null)
+        {
+            Post.Categories.Remove(category);
+            blogService.DeletePostCategory(Post.ID, category.ID);
+        }
     }
 }
