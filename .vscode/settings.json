@@ -1,0 +1,5 @@
+{
+    "appService.preDeployTask": "publish-release",
+    "appService.deploySubpath": "Prionspace/bin/Release/net9.0/publish",
+    "appService.defaultWebAppToDeploy": "/subscriptions/5a70263a-9197-4919-aa20-74cacb98615c/resourceGroups/Prionspace/providers/Microsoft.Web/sites/prionspace"
+}

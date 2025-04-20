@@ -141,6 +141,7 @@
 /Users/prions/Coding/Prionspace/Prionspace/obj/Debug/net9.0/Prionspace.AssemblyInfo.cs
 /Users/prions/Coding/Prionspace/Prionspace/obj/Debug/net9.0/Prionspace.csproj.CoreCompileInputs.cache
 /Users/prions/Coding/Prionspace/Prionspace/obj/Debug/net9.0/Prionspace.MvcApplicationPartsAssemblyInfo.cache
+/Users/prions/Coding/Prionspace/Prionspace/obj/Debug/net9.0/Prionspace.sourcelink.json
 /Users/prions/Coding/Prionspace/Prionspace/obj/Debug/net9.0/scopedcss/Components/Layout/MainLayout.razor.rz.scp.css
 /Users/prions/Coding/Prionspace/Prionspace/obj/Debug/net9.0/scopedcss/bundle/Prionspace.styles.css
 /Users/prions/Coding/Prionspace/Prionspace/obj/Debug/net9.0/scopedcss/projectbundle/Prionspace.bundle.scp.css
@@ -208,4 +209,3 @@
 /Users/prions/Coding/Prionspace/Prionspace/obj/Debug/net9.0/Prionspace.pdb
 /Users/prions/Coding/Prionspace/Prionspace/obj/Debug/net9.0/Prionspace.genruntimeconfig.cache
 /Users/prions/Coding/Prionspace/Prionspace/obj/Debug/net9.0/ref/Prionspace.dll
-/Users/prions/Coding/Prionspace/Prionspace/obj/Debug/net9.0/Prionspace.sourcelink.json
