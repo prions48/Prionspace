@@ -6,6 +6,7 @@ using Prionspace.Components;
 using Prionspace.Data.Email;
 using Prionspace.Data.Files;
 using Prionspace.Data.Users;
+using Prionspace.Data.Blog;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,6 +30,9 @@ builder.Services.AddScoped<FileService>();
 
 builder.Services.AddDbContext<UserContext>(o => o.UseSqlServer(builder.Configuration["ConnectionStrings:SQL"]));
 builder.Services.AddScoped<UserService>();
+
+builder.Services.AddDbContext<BlogContext>(o => o.UseSqlServer(builder.Configuration["ConnectionStrings:SQL"]));
+builder.Services.AddScoped<BlogService>();
 
 
 var app = builder.Build();

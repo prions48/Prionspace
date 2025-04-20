@@ -208,3 +208,4 @@
 /Users/prions/Coding/Prionspace/Prionspace/obj/Debug/net9.0/Prionspace.pdb
 /Users/prions/Coding/Prionspace/Prionspace/obj/Debug/net9.0/Prionspace.genruntimeconfig.cache
 /Users/prions/Coding/Prionspace/Prionspace/obj/Debug/net9.0/ref/Prionspace.dll
+/Users/prions/Coding/Prionspace/Prionspace/obj/Debug/net9.0/Prionspace.sourcelink.json

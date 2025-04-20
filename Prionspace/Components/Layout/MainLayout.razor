@@ -1,8 +1,11 @@
 ﻿@inherits LayoutComponentBase
 @using Prionspace.Components.Pages
 @using Prionspace.Data.Users
+@using Prionspace.Data.Blog
 @inject AuthenticationStateProvider authProvider
 @inject UserService userService
+@inject BlogService blogService
+
 <MudThemeProvider @bind-IsDarkMode="DarkMode" />
 <MudPopoverProvider />
 <MudDialogProvider />
@@ -49,7 +52,8 @@
     private bool MenuView { get; set; } = true;
     private Guid UserID { get; set; }
     private string? UserName { get; set; } = null;
-    private Auth0User? User { get; set; } = null;
+    private BlogUser? User { get; set; } = null;
+    private Auth0User? _user { get; set; } = null;
     private void MenuToggle()
     {
         MenuView = !MenuView;
@@ -67,12 +71,13 @@
                 foreach (var claim in result.User.Claims)
                 {
                     if (claim.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")
-                        User = userService.GetUserByKey(claim.Value);
+                        _user = userService.GetUserByKey(claim.Value);
                 }
             }
-            if (User != null)
+            if (_user != null)
             {
-                userService.RecordLogin(User.UserID);
+                userService.RecordLogin(_user.UserID);
+                User = blogService.GetOrCreateBlogUser(_user);
             }
         }
     }

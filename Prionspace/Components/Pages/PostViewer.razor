@@ -1,0 +1,80 @@
+@inject BlogService blogService
+
+<MudCard Elevation="1" Outlined>
+    <MudCardHeader>
+        @if (Editing)
+        {
+            <MudTextField @bind-Value="EditTitle" Label="Title" />
+        }
+        else
+        {
+            @Post.PostTitle
+        }
+    </MudCardHeader>
+    <MudCardContent>
+        @if (Editing)
+        {
+            <MudTextField @bind-Value="EditText" Lines="10" Label="Post Body" />
+        }
+        else
+        {
+            @Post.PostBody
+        }
+    </MudCardContent>
+    <MudCardActions>
+        @if (Editing)
+        {
+            <MudButton Variant="Variant.Filled" Color="Color.Default" OnClick="Cancel">Cancel</MudButton>
+            @if (Post.Status == PostStatus.Draft)
+            {
+                <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="SaveProgress">Save Progress</MudButton>
+            }
+            <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="Publish">Publish</MudButton>
+        }
+        else if (Editable)
+        {
+            <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="Edit">Edit</MudButton>
+        }
+    </MudCardActions>
+</MudCard>
+
+@code {
+    [CascadingParameter] public BlogUser User { get; set; }
+    [Parameter] public BlogPost Post { get; set; }
+    [Parameter] public bool Editable { get; set; }
+    protected override void OnInitialized()
+    {
+        if (Post.Status == PostStatus.Draft)
+            Edit();
+    }
+    private bool Editing { get; set; } = false;
+    private string EditTitle = "";
+    private string EditText = "";
+    private void Cancel()
+    {
+        Editing = false;
+        EditText = Post.PostBody;
+        EditTitle = Post.PostTitle;
+    }
+    private void SaveProgress()
+    {
+        Post.PostBody = EditText;
+        Post.PostTitle = EditTitle;
+        blogService.UpdatePost(Post);
+        Cancel();
+    }
+    private void Publish()
+    {
+        Post.PostBody = EditText;
+        Post.PostTitle = EditTitle;
+        Post.Status = PostStatus.Public;
+        blogService.UpdatePost(Post);
+        Cancel();
+    }
+    private void Edit()
+    {
+        EditText = Post.PostBody;
+        EditTitle = Post.PostTitle;
+        Editing = true;
+    }
+}

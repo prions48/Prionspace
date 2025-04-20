@@ -1,0 +1,51 @@
+@inject BlogService blogService
+@inject NavigationManager navManager
+
+@if (User?.UserID == Blog.UserID)
+{
+    <MudButton Color="Color.Info" Variant="Variant.Filled" OnClick="AddPost">Create New Post</MudButton>
+}
+<MudCard Elevation="2" Outlined>
+    <MudCardHeader>@Blog.BlogTitle</MudCardHeader>
+    <MudCardContent>
+        <MudText Typo="Typo.caption">@Blog.BlogSubtitle</MudText>
+        <MudTable Items="Blog.Posts" Striped Bordered>
+            <HeaderContent>
+                <MudTh>Title</MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<BlogPost, object>(x=>x.PostDate)" InitialDirection="SortDirection.Descending">Post Date</MudTableSortLabel></MudTh>
+                <MudTh>Status</MudTh>
+                <MudTh>Content</MudTh>
+                <MudTh>Nav</MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd>
+                    <MudLink Href="@($"/blog/{Blog.BlogSlug}/{context.ID}")">@context.PostTitle</MudLink>
+                </MudTd>
+                <MudTd>@context.PostDate.ToString("MM/dd/yy")</MudTd>
+                <MudTd>@context.Status</MudTd>
+                <MudTd>@context.PostBodySlug</MudTd>
+                <MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.ArrowOutward" Href="@($"/blog/{Blog.BlogURL}/{context.PostURL}")" />
+            </RowTemplate>
+            <PagerContent>
+                <MudTablePager />
+            </PagerContent>
+        </MudTable>
+    </MudCardContent>
+</MudCard>
+
+@code {
+    [CascadingParameter] public BlogUser? User { get; set; }
+    [Parameter] public Blog Blog { get; set; }
+    private void AddPost()
+    {
+        BlogPost post = new BlogPost()
+        {
+            BlogID = Blog.ID,
+            PostDate = DateTime.Now,
+            PostUser = User!.UserName,
+            Status = PostStatus.Draft
+        };
+        blogService.CreatePost(post);
+        navManager.NavigateTo($"/blog/{Blog.BlogURL}/{post.ID}", true);
+    }
+}

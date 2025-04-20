@@ -39,6 +39,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9BdXRoU3R1ZmYucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/prions/Coding/Prionspace/Prionspace/Components/Pages/BlogEngine.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9CbG9nRW5naW5lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/prions/Coding/Prionspace/Prionspace/Components/Pages/BlogViewer.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9CbG9nVmlld2VyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/prions/Coding/Prionspace/Prionspace/Components/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Db3VudGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -57,6 +65,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/prions/Coding/Prionspace/Prionspace/Components/Pages/LogInOut.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Mb2dJbk91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/prions/Coding/Prionspace/Prionspace/Components/Pages/PostViewer.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Qb3N0Vmlld2VyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/prions/Coding/Prionspace/Prionspace/Components/Pages/ThemeMode.razor]

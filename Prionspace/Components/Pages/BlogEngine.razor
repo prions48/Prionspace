@@ -1,0 +1,180 @@
+@using Prionspace.Data.Blog
+@inject BlogService blogService
+@inject ISnackbar Snackbar
+@page "/blog/"
+@page "/blog/{blogid}"
+@page "/blog/{blogid}/{postid}"
+
+@if (ThisPost != null)
+{
+    <PostViewer Post="ThisPost" Editable="User != null && ThisBlog?.UserID == User.UserID" />
+}
+else if (ThisBlog != null)
+{
+    <BlogViewer Blog="ThisBlog" />
+}
+else if (!string.IsNullOrEmpty(blogid))
+{
+    <MudText Typo="Typo.h3">No blog found matching this identifier.</MudText>
+}
+else if (!string.IsNullOrEmpty(postid))
+{
+    <MudText Typo="Typo.h3">No post found matching this identifier.</MudText>
+}
+else if (User != null)
+{
+    @if (User.IsValidUser)
+    {
+        <MudSimpleTable Striped Bordered>
+            <thead>
+                <tr>
+                    <th>
+                        Blog
+                    </th>
+                    <th>
+                        Posts
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Blog blog in UserBlogs)
+                {
+                    <tr>
+                        <td>
+                            <MudLink Href="@($"/blog/{blog.BlogURL}")">@blog.BlogTitle</MudLink>
+                        </td>
+                        <td>
+                            @blog.Posts.Count
+                        </td>
+                    </tr>
+                }
+                @if (UserBlogs.Count < 2)
+                {
+                    <tr>
+                        @if (CreatingBlog)
+                        {
+                            <td>
+                                <MudTextField @bind-Value="BlogTitle" Label="Title" />
+                                <MudTextField @bind-Value="BlogSubtitle" Label="Subtitle" />
+                                <MudTextField @bind-Value="BlogSlug" Label="Slug" />
+                                <MudText Color="@(ValidSlug == "valid" ? Color.Success : Color.Error)">@ValidSlug</MudText>
+                            </td>
+                            <td>
+                                <MudButton Color="Color.Info" Variant="Variant.Filled" OnClick="CreateBlog">Create</MudButton>
+                            </td>
+                        }
+                        else
+                        {
+                            <td colspan="2">
+                                <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="() => CreatingBlog = true">Create New Blog</MudButton>
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </MudSimpleTable>
+    }
+    else
+    {
+        <MudCard Elevation="2" Outlined Square>
+            <MudCardHeader>Create Account</MudCardHeader>
+            <MudCardContent>
+                <MudTextField @bind-Value="NewName" Label="User Name" />
+                <MudTextField @bind-Value="NewSlug" Label="URL Name" />
+                <MudTextField @bind-Value="NewEmail" Label="Email Address" />
+            </MudCardContent>
+            <MudCardActions>
+                <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="SaveUser"
+                Disabled="string.IsNullOrEmpty(NewName) || string.IsNullOrEmpty(NewSlug) || string.IsNullOrEmpty(NewEmail)">Save Profile</MudButton>
+            </MudCardActions>
+        </MudCard>
+    }
+}
+
+@code {
+    [CascadingParameter] public BlogUser? User { get; set; }
+    [Parameter] public string? blogid { get; set; }
+    [Parameter] public string? postid { get; set; }
+    private Guid loadedpost = Guid.Empty;
+    private Guid loadedblog = Guid.Empty;
+    private Guid userid = Guid.Empty;
+    private Blog? ThisBlog { get; set; } = null;
+    private BlogPost? ThisPost { get; set; } = null;
+    private List<Blog> UserBlogs { get; set; } = [];
+    private string? NewName;
+    private string? NewSlug;
+    private string? NewEmail;
+    private void SaveUser()
+    {
+        if (User != null)
+        {
+            User.UserSlug = NewSlug!;
+            User.UserName = NewName!;
+            User.UserEmail = NewEmail!;
+            blogService.UpdateUser(User);
+        }
+    }
+    protected override void OnParametersSet()
+    {
+        if (User != null && userid != User.UserID)
+        {
+            UserBlogs = blogService.GetBlogsByUser(User.UserID);
+            userid = User.UserID;
+        }
+        if (loadedpost != ThisPost?.ID || loadedblog != ThisBlog?.ID)
+        {
+            if (postid != null)
+            {
+                ThisPost = blogService.GetPostByURL(postid, User);
+                if (ThisPost != null && !string.IsNullOrEmpty(blogid))
+                {
+                    ThisBlog = blogService.GetBlogByURL(blogid);
+                    loadedpost = ThisPost.ID;
+                    loadedblog = ThisBlog?.ID ?? Guid.Empty;
+                }
+            }
+            else if (blogid != null)
+            {
+                ThisBlog = blogService.GetBlogByURL(blogid);
+                loadedblog = ThisBlog?.ID ?? Guid.Empty;
+            }
+        }
+    }
+    bool CreatingBlog = false;
+    private string BlogTitle = "";
+    private string BlogSubtitle = "";
+    private string BlogSlug = "";
+    private void CreateBlog()
+    {
+        if (User != null)
+        {
+            Blog newblog = new Blog()
+            {
+                UserID = User.UserID,
+                BlogTitle = BlogTitle,
+                BlogSubtitle = BlogSubtitle,
+                BlogSlug = BlogSlug
+            };
+            blogService.CreateBlog(newblog);
+            UserBlogs.Add(newblog);
+        }
+    }
+    private string ValidSlug
+    {
+        get
+        {
+            string s = BlogSlug;
+            if (s.Length < 5)
+                return "too short";
+            if (s.Length > 20)
+                return "too long";
+            string S2 = s.ToUpper();
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (S2[i] < 'A' || S2[i] > 'Z')
+                    return "invalid characters";
+            }
+            return "valid";
+        }
+    }
+}
