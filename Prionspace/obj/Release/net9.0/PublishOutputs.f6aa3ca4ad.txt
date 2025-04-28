@@ -38,6 +38,7 @@
 /Users/prions/Coding/Prionspace/Prionspace/bin/Release/net9.0/publish/System.Security.Cryptography.ProtectedData.dll
 /Users/prions/Coding/Prionspace/Prionspace/bin/Release/net9.0/publish/System.Security.Permissions.dll
 /Users/prions/Coding/Prionspace/Prionspace/bin/Release/net9.0/publish/System.Windows.Extensions.dll
+/Users/prions/Coding/Prionspace/Prionspace/bin/Release/net9.0/publish/Tizzani.MudBlazor.HtmlEditor.dll
 /Users/prions/Coding/Prionspace/Prionspace/bin/Release/net9.0/publish/runtimes/unix/lib/net6.0/Microsoft.Data.SqlClient.dll
 /Users/prions/Coding/Prionspace/Prionspace/bin/Release/net9.0/publish/runtimes/win/lib/net6.0/Microsoft.Data.SqlClient.dll
 /Users/prions/Coding/Prionspace/Prionspace/bin/Release/net9.0/publish/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll

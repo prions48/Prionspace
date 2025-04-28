@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Us/TtQf12xNv96qhb4rJhrHNh2cmPLJ73c0HGYCgIVU=",
+  "Hash": "jRLAiY0YUPH8REzryypVu9ng9BGofLXL7J42Ite74Q4=",
   "Source": "Prionspace",
   "BasePath": "_content/Prionspace",
   "Mode": "Default",
@@ -57,6 +57,111 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/prions/.nuget/packages/mudblazor/7.15.0/staticwebassets/MudBlazor.min.js"
+    },
+    {
+      "Identity": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/MudHtmlEditor.Core.css",
+      "SourceId": "Tizzani.MudBlazor.HtmlEditor",
+      "SourceType": "Package",
+      "ContentRoot": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/",
+      "BasePath": "_content/Tizzani.MudBlazor.HtmlEditor",
+      "RelativePath": "MudHtmlEditor.Core.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3571i0vn41",
+      "Integrity": "Z9yQ0PO9RSckfjjAfywkW8fQKZSA8u9Pz4Ed89Sr9KU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/MudHtmlEditor.Core.css"
+    },
+    {
+      "Identity": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/MudHtmlEditor.css",
+      "SourceId": "Tizzani.MudBlazor.HtmlEditor",
+      "SourceType": "Package",
+      "ContentRoot": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/",
+      "BasePath": "_content/Tizzani.MudBlazor.HtmlEditor",
+      "RelativePath": "MudHtmlEditor.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "uky5ggktsd",
+      "Integrity": "Tg7jymWmpEZDk+GzCWP1g/yetNtoY3gE/Q+kFNe9aR4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/MudHtmlEditor.css"
+    },
+    {
+      "Identity": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/MudHtmlEditor.razor.js",
+      "SourceId": "Tizzani.MudBlazor.HtmlEditor",
+      "SourceType": "Package",
+      "ContentRoot": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/",
+      "BasePath": "_content/Tizzani.MudBlazor.HtmlEditor",
+      "RelativePath": "MudHtmlEditor.razor.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "wpyfdpjww5",
+      "Integrity": "fEHjSmV3mnyXTUsWAZMmE6K+CfZl6Fx38EYTtUrLhFE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/MudHtmlEditor.razor.js"
+    },
+    {
+      "Identity": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/quill-blot-formatter.min.js",
+      "SourceId": "Tizzani.MudBlazor.HtmlEditor",
+      "SourceType": "Package",
+      "ContentRoot": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/",
+      "BasePath": "_content/Tizzani.MudBlazor.HtmlEditor",
+      "RelativePath": "quill-blot-formatter.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "t4t4gpb7ad",
+      "Integrity": "gw/hIqlf+1X7EZZlcNNg8MA5gmGZh+B9G/mdKd7DbrU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/quill-blot-formatter.min.js"
+    },
+    {
+      "Identity": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/quill.snow.min.css",
+      "SourceId": "Tizzani.MudBlazor.HtmlEditor",
+      "SourceType": "Package",
+      "ContentRoot": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/",
+      "BasePath": "_content/Tizzani.MudBlazor.HtmlEditor",
+      "RelativePath": "quill.snow.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "exxw4u5cwn",
+      "Integrity": "wn8vvu7M8T9gLBUBWy02ZdONPu2Pn0cRLpYPFTQX38w=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/quill.snow.min.css"
     },
     {
       "Identity": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/012njmigjm-ft3s53vfgj.gz",
@@ -374,6 +479,27 @@
       "OriginalItemSpec": "/Users/prions/Coding/Prionspace/Prionspace/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map"
     },
     {
+      "Identity": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/8za2bv62d4-exxw4u5cwn.gz",
+      "SourceId": "Tizzani.MudBlazor.HtmlEditor",
+      "SourceType": "Package",
+      "ContentRoot": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/",
+      "BasePath": "_content/Tizzani.MudBlazor.HtmlEditor",
+      "RelativePath": "quill.snow.min.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/quill.snow.min.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "xmlf0e9oor",
+      "Integrity": "SaPB8k6hwFBvcIJbiji0TDyqvDVZx8jttDrW1amKzUs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/quill.snow.min.css"
+    },
+    {
       "Identity": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/9nt8k444qc-63fj8s7r0e.gz",
       "SourceId": "Prionspace",
       "SourceType": "Discovered",
@@ -687,6 +813,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/prions/Coding/Prionspace/Prionspace/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Identity": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/m04s7zkvq0-3571i0vn41.gz",
+      "SourceId": "Tizzani.MudBlazor.HtmlEditor",
+      "SourceType": "Package",
+      "ContentRoot": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/",
+      "BasePath": "_content/Tizzani.MudBlazor.HtmlEditor",
+      "RelativePath": "MudHtmlEditor.Core.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/MudHtmlEditor.Core.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "tq2bp8lf0x",
+      "Integrity": "WzQMdaQ7/wjw7tdms3qh5MHoyZgoad6xIUwXZsrFP6k=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/MudHtmlEditor.Core.css"
     },
     {
       "Identity": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/n7mhs5lrj8-fvhpjtyr6v.gz",
@@ -1088,6 +1235,27 @@
       "OriginalItemSpec": "/Users/prions/Coding/Prionspace/Prionspace/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map"
     },
     {
+      "Identity": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/publish/8za2bv62d4-exxw4u5cwn.br",
+      "SourceId": "Tizzani.MudBlazor.HtmlEditor",
+      "SourceType": "Package",
+      "ContentRoot": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/publish/",
+      "BasePath": "_content/Tizzani.MudBlazor.HtmlEditor",
+      "RelativePath": "quill.snow.min.css.br",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/quill.snow.min.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "br",
+      "Fingerprint": "9iz8djfrfe",
+      "Integrity": "wW4H1V/opqNI9Xnp6xosXEy8MaRhFzbXB/GMTRe5JIc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/quill.snow.min.css"
+    },
+    {
       "Identity": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/publish/9nt8k444qc-63fj8s7r0e.br",
       "SourceId": "Prionspace",
       "SourceType": "Discovered",
@@ -1403,6 +1571,27 @@
       "OriginalItemSpec": "/Users/prions/Coding/Prionspace/Prionspace/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css"
     },
     {
+      "Identity": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/publish/m04s7zkvq0-3571i0vn41.br",
+      "SourceId": "Tizzani.MudBlazor.HtmlEditor",
+      "SourceType": "Package",
+      "ContentRoot": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/publish/",
+      "BasePath": "_content/Tizzani.MudBlazor.HtmlEditor",
+      "RelativePath": "MudHtmlEditor.Core.css.br",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/MudHtmlEditor.Core.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "br",
+      "Fingerprint": "97y1klwshu",
+      "Integrity": "m5TUCuy3yU/ofzCJepGQZ1pKxtivXyrwJfo+jwlp4Yc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/MudHtmlEditor.Core.css"
+    },
+    {
       "Identity": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/publish/n7mhs5lrj8-fvhpjtyr6v.br",
       "SourceId": "Prionspace",
       "SourceType": "Discovered",
@@ -1506,6 +1695,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/prions/Coding/Prionspace/Prionspace/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map"
+    },
+    {
+      "Identity": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/publish/qaujcekjou-uky5ggktsd.br",
+      "SourceId": "Tizzani.MudBlazor.HtmlEditor",
+      "SourceType": "Package",
+      "ContentRoot": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/publish/",
+      "BasePath": "_content/Tizzani.MudBlazor.HtmlEditor",
+      "RelativePath": "MudHtmlEditor.css.br",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/MudHtmlEditor.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "br",
+      "Fingerprint": "whuiyd8uul",
+      "Integrity": "HN8K/rklgmqsZU8ScynRuFCeO66pw/QLennNN2Fe26M=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/MudHtmlEditor.css"
     },
     {
       "Identity": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/publish/qbsvffi0al-kbrnm935zg.br",
@@ -1613,6 +1823,27 @@
       "OriginalItemSpec": "/Users/prions/Coding/Prionspace/Prionspace/wwwroot/app.css"
     },
     {
+      "Identity": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/publish/sz33cyat2r-wpyfdpjww5.br",
+      "SourceId": "Tizzani.MudBlazor.HtmlEditor",
+      "SourceType": "Package",
+      "ContentRoot": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/publish/",
+      "BasePath": "_content/Tizzani.MudBlazor.HtmlEditor",
+      "RelativePath": "MudHtmlEditor.razor.js.br",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/MudHtmlEditor.razor.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "br",
+      "Fingerprint": "i6dvnpn5ax",
+      "Integrity": "en/NXbTkGTE5cKlOFDqgDPWN+6jQojXQQJMN+9cmRGs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/MudHtmlEditor.razor.js"
+    },
+    {
       "Identity": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/publish/tzfteoowp7-6pdc2jztkx.br",
       "SourceId": "Prionspace",
       "SourceType": "Discovered",
@@ -1674,6 +1905,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/prions/Coding/Prionspace/Prionspace/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css"
+    },
+    {
+      "Identity": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/publish/uwhmh6u0w5-t4t4gpb7ad.br",
+      "SourceId": "Tizzani.MudBlazor.HtmlEditor",
+      "SourceType": "Package",
+      "ContentRoot": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/publish/",
+      "BasePath": "_content/Tizzani.MudBlazor.HtmlEditor",
+      "RelativePath": "quill-blot-formatter.min.js.br",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/quill-blot-formatter.min.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "br",
+      "Fingerprint": "jcoto8fmn3",
+      "Integrity": "fTfwnPOquVvNTTEVYpXreV6gJrzgJ37li96Kg+ogiw8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/quill-blot-formatter.min.js"
     },
     {
       "Identity": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/publish/wc1wzc98r3-dxx9fxp4il.br",
@@ -1823,6 +2075,27 @@
       "OriginalItemSpec": "/Users/prions/Coding/Prionspace/Prionspace/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map"
     },
     {
+      "Identity": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/qaujcekjou-uky5ggktsd.gz",
+      "SourceId": "Tizzani.MudBlazor.HtmlEditor",
+      "SourceType": "Package",
+      "ContentRoot": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/",
+      "BasePath": "_content/Tizzani.MudBlazor.HtmlEditor",
+      "RelativePath": "MudHtmlEditor.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/MudHtmlEditor.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "uuwzgih5n5",
+      "Integrity": "6oY6cK9YYPSlbyva80XUfSljafwQ7Jf/OmvfOYKxIMc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/MudHtmlEditor.css"
+    },
+    {
       "Identity": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/qbsvffi0al-kbrnm935zg.gz",
       "SourceId": "Prionspace",
       "SourceType": "Discovered",
@@ -1928,6 +2201,27 @@
       "OriginalItemSpec": "/Users/prions/Coding/Prionspace/Prionspace/wwwroot/app.css"
     },
     {
+      "Identity": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/sz33cyat2r-wpyfdpjww5.gz",
+      "SourceId": "Tizzani.MudBlazor.HtmlEditor",
+      "SourceType": "Package",
+      "ContentRoot": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/",
+      "BasePath": "_content/Tizzani.MudBlazor.HtmlEditor",
+      "RelativePath": "MudHtmlEditor.razor.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/MudHtmlEditor.razor.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "2r5rpxsycb",
+      "Integrity": "Io16cw2FUBPX/lG9Scg4CYGC2B59aeAIPsp6ZhY1388=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/MudHtmlEditor.razor.js"
+    },
+    {
       "Identity": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/tzfteoowp7-6pdc2jztkx.gz",
       "SourceId": "Prionspace",
       "SourceType": "Discovered",
@@ -1989,6 +2283,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/prions/Coding/Prionspace/Prionspace/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css"
+    },
+    {
+      "Identity": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/uwhmh6u0w5-t4t4gpb7ad.gz",
+      "SourceId": "Tizzani.MudBlazor.HtmlEditor",
+      "SourceType": "Package",
+      "ContentRoot": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/",
+      "BasePath": "_content/Tizzani.MudBlazor.HtmlEditor",
+      "RelativePath": "quill-blot-formatter.min.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/quill-blot-formatter.min.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "e8hwfnirex",
+      "Integrity": "wtWhjG/n53jaLgmxW8gwf2kkaYKjqHISOZn6w1FmpYk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/quill-blot-formatter.min.js"
     },
     {
       "Identity": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/wc1wzc98r3-dxx9fxp4il.gz",
@@ -3597,6 +3912,1383 @@
         {
           "Name": "integrity",
           "Value": "sha256-t8zRtLCrHv+/DVEEUNrm/WrOhDAYaoXyvMCUFNDbwhE="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.Core.3571i0vn41.css",
+      "AssetFile": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/MudHtmlEditor.Core.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10712"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z9yQ0PO9RSckfjjAfywkW8fQKZSA8u9Pz4Ed89Sr9KU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 23 May 2024 16:47:21 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3571i0vn41"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z9yQ0PO9RSckfjjAfywkW8fQKZSA8u9Pz4Ed89Sr9KU="
+        },
+        {
+          "Name": "label",
+          "Value": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.Core.css"
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.Core.css",
+      "AssetFile": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/MudHtmlEditor.Core.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10712"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z9yQ0PO9RSckfjjAfywkW8fQKZSA8u9Pz4Ed89Sr9KU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 23 May 2024 16:47:21 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z9yQ0PO9RSckfjjAfywkW8fQKZSA8u9Pz4Ed89Sr9KU="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.Core.css",
+      "AssetFile": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/m04s7zkvq0-3571i0vn41.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000649772580"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1538"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WzQMdaQ7/wjw7tdms3qh5MHoyZgoad6xIUwXZsrFP6k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 23 May 2024 16:47:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Z9yQ0PO9RSckfjjAfywkW8fQKZSA8u9Pz4Ed89Sr9KU=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z9yQ0PO9RSckfjjAfywkW8fQKZSA8u9Pz4Ed89Sr9KU="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.Core.css",
+      "AssetFile": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/publish/m04s7zkvq0-3571i0vn41.br",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "br",
+          "Quality": "0.000805801773"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1240"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"m5TUCuy3yU/ofzCJepGQZ1pKxtivXyrwJfo+jwlp4Yc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 23 May 2024 16:47:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "br"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Z9yQ0PO9RSckfjjAfywkW8fQKZSA8u9Pz4Ed89Sr9KU=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z9yQ0PO9RSckfjjAfywkW8fQKZSA8u9Pz4Ed89Sr9KU="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.Core.css.br",
+      "AssetFile": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/publish/m04s7zkvq0-3571i0vn41.br",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1240"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"m5TUCuy3yU/ofzCJepGQZ1pKxtivXyrwJfo+jwlp4Yc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 23 May 2024 16:47:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "br"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-m5TUCuy3yU/ofzCJepGQZ1pKxtivXyrwJfo+jwlp4Yc="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.Core.css.gz",
+      "AssetFile": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/m04s7zkvq0-3571i0vn41.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1538"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WzQMdaQ7/wjw7tdms3qh5MHoyZgoad6xIUwXZsrFP6k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 23 May 2024 16:47:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WzQMdaQ7/wjw7tdms3qh5MHoyZgoad6xIUwXZsrFP6k="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.css",
+      "AssetFile": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/MudHtmlEditor.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "76"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Tg7jymWmpEZDk+GzCWP1g/yetNtoY3gE/Q+kFNe9aR4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Tg7jymWmpEZDk+GzCWP1g/yetNtoY3gE/Q+kFNe9aR4="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.css",
+      "AssetFile": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/publish/qaujcekjou-uky5ggktsd.br",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "br",
+          "Quality": "0.014925373134"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "66"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HN8K/rklgmqsZU8ScynRuFCeO66pw/QLennNN2Fe26M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "br"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Tg7jymWmpEZDk+GzCWP1g/yetNtoY3gE/Q+kFNe9aR4=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Tg7jymWmpEZDk+GzCWP1g/yetNtoY3gE/Q+kFNe9aR4="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.css",
+      "AssetFile": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/qaujcekjou-uky5ggktsd.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.012500000000"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "79"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6oY6cK9YYPSlbyva80XUfSljafwQ7Jf/OmvfOYKxIMc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Tg7jymWmpEZDk+GzCWP1g/yetNtoY3gE/Q+kFNe9aR4=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Tg7jymWmpEZDk+GzCWP1g/yetNtoY3gE/Q+kFNe9aR4="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.css.br",
+      "AssetFile": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/publish/qaujcekjou-uky5ggktsd.br",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "66"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HN8K/rklgmqsZU8ScynRuFCeO66pw/QLennNN2Fe26M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "br"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HN8K/rklgmqsZU8ScynRuFCeO66pw/QLennNN2Fe26M="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.css.gz",
+      "AssetFile": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/qaujcekjou-uky5ggktsd.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "79"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6oY6cK9YYPSlbyva80XUfSljafwQ7Jf/OmvfOYKxIMc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6oY6cK9YYPSlbyva80XUfSljafwQ7Jf/OmvfOYKxIMc="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.razor.js",
+      "AssetFile": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/MudHtmlEditor.razor.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2189"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fEHjSmV3mnyXTUsWAZMmE6K+CfZl6Fx38EYTtUrLhFE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fEHjSmV3mnyXTUsWAZMmE6K+CfZl6Fx38EYTtUrLhFE="
+        },
+        {
+          "Name": "script-type",
+          "Value": "module"
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.razor.js",
+      "AssetFile": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/publish/sz33cyat2r-wpyfdpjww5.br",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "br",
+          "Quality": "0.001468428781"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "680"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"en/NXbTkGTE5cKlOFDqgDPWN+6jQojXQQJMN+9cmRGs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "br"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"fEHjSmV3mnyXTUsWAZMmE6K+CfZl6Fx38EYTtUrLhFE=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fEHjSmV3mnyXTUsWAZMmE6K+CfZl6Fx38EYTtUrLhFE="
+        },
+        {
+          "Name": "script-type",
+          "Value": "module"
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.razor.js",
+      "AssetFile": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/sz33cyat2r-wpyfdpjww5.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001254705144"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "796"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Io16cw2FUBPX/lG9Scg4CYGC2B59aeAIPsp6ZhY1388=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"fEHjSmV3mnyXTUsWAZMmE6K+CfZl6Fx38EYTtUrLhFE=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fEHjSmV3mnyXTUsWAZMmE6K+CfZl6Fx38EYTtUrLhFE="
+        },
+        {
+          "Name": "script-type",
+          "Value": "module"
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.razor.js.br",
+      "AssetFile": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/publish/sz33cyat2r-wpyfdpjww5.br",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "680"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"en/NXbTkGTE5cKlOFDqgDPWN+6jQojXQQJMN+9cmRGs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "br"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-en/NXbTkGTE5cKlOFDqgDPWN+6jQojXQQJMN+9cmRGs="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.razor.js.gz",
+      "AssetFile": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/sz33cyat2r-wpyfdpjww5.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "796"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Io16cw2FUBPX/lG9Scg4CYGC2B59aeAIPsp6ZhY1388=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Io16cw2FUBPX/lG9Scg4CYGC2B59aeAIPsp6ZhY1388="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.uky5ggktsd.css",
+      "AssetFile": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/MudHtmlEditor.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "76"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Tg7jymWmpEZDk+GzCWP1g/yetNtoY3gE/Q+kFNe9aR4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "uky5ggktsd"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Tg7jymWmpEZDk+GzCWP1g/yetNtoY3gE/Q+kFNe9aR4="
+        },
+        {
+          "Name": "label",
+          "Value": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.css"
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/quill-blot-formatter.min.js",
+      "AssetFile": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/quill-blot-formatter.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30281"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gw/hIqlf+1X7EZZlcNNg8MA5gmGZh+B9G/mdKd7DbrU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 23 May 2024 16:47:21 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gw/hIqlf+1X7EZZlcNNg8MA5gmGZh+B9G/mdKd7DbrU="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/quill-blot-formatter.min.js",
+      "AssetFile": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/publish/uwhmh6u0w5-t4t4gpb7ad.br",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "br",
+          "Quality": "0.000205718988"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4860"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fTfwnPOquVvNTTEVYpXreV6gJrzgJ37li96Kg+ogiw8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 23 May 2024 16:47:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "br"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"gw/hIqlf+1X7EZZlcNNg8MA5gmGZh+B9G/mdKd7DbrU=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gw/hIqlf+1X7EZZlcNNg8MA5gmGZh+B9G/mdKd7DbrU="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/quill-blot-formatter.min.js",
+      "AssetFile": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/uwhmh6u0w5-t4t4gpb7ad.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000177999288"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5617"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wtWhjG/n53jaLgmxW8gwf2kkaYKjqHISOZn6w1FmpYk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 23 May 2024 16:47:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"gw/hIqlf+1X7EZZlcNNg8MA5gmGZh+B9G/mdKd7DbrU=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gw/hIqlf+1X7EZZlcNNg8MA5gmGZh+B9G/mdKd7DbrU="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/quill-blot-formatter.min.js.br",
+      "AssetFile": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/publish/uwhmh6u0w5-t4t4gpb7ad.br",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4860"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fTfwnPOquVvNTTEVYpXreV6gJrzgJ37li96Kg+ogiw8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 23 May 2024 16:47:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "br"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fTfwnPOquVvNTTEVYpXreV6gJrzgJ37li96Kg+ogiw8="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/quill-blot-formatter.min.js.gz",
+      "AssetFile": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/uwhmh6u0w5-t4t4gpb7ad.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5617"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wtWhjG/n53jaLgmxW8gwf2kkaYKjqHISOZn6w1FmpYk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 23 May 2024 16:47:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wtWhjG/n53jaLgmxW8gwf2kkaYKjqHISOZn6w1FmpYk="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/quill-blot-formatter.min.t4t4gpb7ad.js",
+      "AssetFile": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/quill-blot-formatter.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30281"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gw/hIqlf+1X7EZZlcNNg8MA5gmGZh+B9G/mdKd7DbrU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 23 May 2024 16:47:21 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "t4t4gpb7ad"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gw/hIqlf+1X7EZZlcNNg8MA5gmGZh+B9G/mdKd7DbrU="
+        },
+        {
+          "Name": "label",
+          "Value": "_content/Tizzani.MudBlazor.HtmlEditor/quill-blot-formatter.min.js"
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/quill.snow.min.css",
+      "AssetFile": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/quill.snow.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24615"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wn8vvu7M8T9gLBUBWy02ZdONPu2Pn0cRLpYPFTQX38w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wn8vvu7M8T9gLBUBWy02ZdONPu2Pn0cRLpYPFTQX38w="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/quill.snow.min.css",
+      "AssetFile": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/8za2bv62d4-exxw4u5cwn.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000264970853"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3773"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SaPB8k6hwFBvcIJbiji0TDyqvDVZx8jttDrW1amKzUs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"wn8vvu7M8T9gLBUBWy02ZdONPu2Pn0cRLpYPFTQX38w=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wn8vvu7M8T9gLBUBWy02ZdONPu2Pn0cRLpYPFTQX38w="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/quill.snow.min.css",
+      "AssetFile": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/publish/8za2bv62d4-exxw4u5cwn.br",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "br",
+          "Quality": "0.000311429461"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3210"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wW4H1V/opqNI9Xnp6xosXEy8MaRhFzbXB/GMTRe5JIc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "br"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"wn8vvu7M8T9gLBUBWy02ZdONPu2Pn0cRLpYPFTQX38w=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wn8vvu7M8T9gLBUBWy02ZdONPu2Pn0cRLpYPFTQX38w="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/quill.snow.min.css.br",
+      "AssetFile": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/publish/8za2bv62d4-exxw4u5cwn.br",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3210"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wW4H1V/opqNI9Xnp6xosXEy8MaRhFzbXB/GMTRe5JIc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "br"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wW4H1V/opqNI9Xnp6xosXEy8MaRhFzbXB/GMTRe5JIc="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/quill.snow.min.css.gz",
+      "AssetFile": "/Users/prions/Coding/Prionspace/Prionspace/obj/Release/net9.0/compressed/8za2bv62d4-exxw4u5cwn.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3773"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SaPB8k6hwFBvcIJbiji0TDyqvDVZx8jttDrW1amKzUs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SaPB8k6hwFBvcIJbiji0TDyqvDVZx8jttDrW1amKzUs="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/quill.snow.min.exxw4u5cwn.css",
+      "AssetFile": "/Users/prions/.nuget/packages/tizzani.mudblazor.htmleditor/2.3.0/staticwebassets/quill.snow.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24615"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wn8vvu7M8T9gLBUBWy02ZdONPu2Pn0cRLpYPFTQX38w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "exxw4u5cwn"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-wn8vvu7M8T9gLBUBWy02ZdONPu2Pn0cRLpYPFTQX38w="
+        },
+        {
+          "Name": "label",
+          "Value": "_content/Tizzani.MudBlazor.HtmlEditor/quill.snow.min.css"
         }
       ]
     },

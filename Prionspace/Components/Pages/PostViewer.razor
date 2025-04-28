@@ -2,99 +2,112 @@
 @inject IDialogService dialogService
 @inject BlogService blogService
 @using Tizzani.MudBlazor.HtmlEditor
+@inject NavigationManager navManager
 
-<MudStack>
-    <MudCard Elevation="1" Outlined>
-        <MudCardHeader>
-            @if (Editing)
-            {
-                <MudTextField @bind-Value="EditTitle" Label="Title" />
-            }
-            else
-            {
-                @Post.PostTitle
-            }
-        </MudCardHeader>
-        <MudCardContent>
-            @if (Editing)
-            {
-                <MudHtmlEditor @bind-Html="EditText" Outlined Resizable Placeholder="Write about something here!">
-                    <MudHtmlToolbarOptions InsertImage="false" InsertLink="false" CodeBlock="false" />
-                </MudHtmlEditor>
-            }
-            else
-            {
-                @Post.PostBodyHTML
-            }
-        </MudCardContent>
-        <MudCardActions>
-            @if (Editing)
-            {
-                <MudButton Variant="Variant.Filled" Color="Color.Default" OnClick="Cancel">Cancel</MudButton>
-                @if (Post.Status == PostStatus.Draft)
-                {
-                    <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="SaveProgress">Save Progress</MudButton>
-                }
-                <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="Publish">Publish</MudButton>
-            }
-            else if (Editable)
-            {
-                <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="Edit">Edit</MudButton>
-            }
-        </MudCardActions>
-    </MudCard>
-    <MudCard Outlined>
-        <MudCardContent>
-            <MudStack Row>
-                <MudText Typo="Typo.caption">Categories</MudText>
+<MudGrid>
+    <MudItem xs="12" sm="12" md="6" lg="8" xl="10">
+        <MudCard Elevation="1" Outlined>
+            <MudCardHeader>
                 @if (Editing)
                 {
-                    <MudMenu Label="Add Category">
-                        @foreach (BlogCategory category in Categories.Where(e => !Post.Categories.Select(f => f.ID).Contains(e.ID)))
-                        {
-                            <MudMenuItem OnClick="() => AddCategory(category)"><MudText Color="@category.Color">@category.CategoryName</MudText></MudMenuItem>
-                        }
-                    </MudMenu>
+                    <MudTextField @bind-Value="EditTitle" Label="Title" Typo="Typo.h6" />
                 }
-                <MudChipSet T="BlogCategory" OnClose="DeleteCategory" AllClosable="Editing">
-                    @foreach (BlogCategory category in Post.Categories)
+                else
+                {
+                    <MudText Typo="Typo.h6">@Post.PostTitle</MudText>
+                }
+            </MudCardHeader>
+            <MudCardContent>
+                @if (Editing)
+                {
+                    <MudHtmlEditor @bind-Html="EditText" Outlined Resizable Placeholder="Write about something here!">
+                        <MudHtmlToolbarOptions InsertImage="false" InsertLink="false" CodeBlock="false" />
+                    </MudHtmlEditor>
+                }
+                else
+                {
+                    @Post.PostBodyHTML
+                }
+            </MudCardContent>
+            <MudCardActions>
+                @if (Editing)
+                {
+                    <MudButton Variant="Variant.Filled" Color="Color.Default" OnClick="Cancel">Cancel</MudButton>
+                    @if (Post.Status == PostStatus.Draft)
                     {
-                        <MudChip Value="category" Color="@category.Color" Text="@category.CategoryName" Variant="Variant.Filled" />
+                        <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="SaveProgress">Save Progress</MudButton>
                     }
-                </MudChipSet>
-            </MudStack>
-            <MudStack Row>
-                <MudText Typo="Typo.caption">Tags</MudText>
-                @if (Editing)
+                    <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="Publish">Publish</MudButton>
+                }
+                else if (Editable)
                 {
-                    <MudMenu Label="Add Tag">
-                        @foreach (BlogTag tag in Tags)
+                    <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="Edit">Edit</MudButton>
+                }
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+    <MudItem xs="12" sm="12" md="6" lg="4" xl="2">
+        <MudCard Outlined>
+            <MudCardContent>
+                <MudStack Justify="Justify.FlexStart" AlignItems="AlignItems.Start">
+                    <MudLink Typo="Typo.h5" OnClick="BlogBack">@Blog.BlogTitle</MudLink>
+                    <MudStack Row>
+                        @if (Editing)
                         {
-                            @if (!Post.Tags.Any(e => e == tag.TagTitle))
+                            <MudMenu Label="Add Category">
+                                @foreach (BlogCategory category in Blog.Categories.Where(e => !Post.Categories.Select(f => f.ID).Contains(e.ID)))
+                                {
+                                    <MudMenuItem OnClick="() => AddCategory(category)"><MudText Color="@category.Color">@category.CategoryName</MudText></MudMenuItem>
+                                }
+                            </MudMenu>
+                        }
+                        else
+                        {
+                            <MudText Typo="Typo.caption">Categories</MudText>
+                        }
+                        <MudChipSet T="BlogCategory" OnClose="DeleteCategory" AllClosable="Editing">
+                            @foreach (BlogCategory category in Post.Categories)
                             {
-                                <MudMenuItem OnClick="() => AddTag(tag)">@tag.TagTitle</MudMenuItem>
+                                <MudChip Value="category" Color="@category.Color" Text="@category.CategoryName" Variant="Variant.Filled" />
                             }
+                        </MudChipSet>
+                    </MudStack>
+                    <MudStack Row>
+                        @if (Editing)
+                        {
+                            <MudMenu Label="Add Tag">
+                                @foreach (BlogTag tag in Blog.Tags)
+                                {
+                                    @if (!Post.Tags.Any(e => e == tag.TagTitle))
+                                    {
+                                        <MudMenuItem OnClick="() => AddTag(tag)">@tag.TagTitle</MudMenuItem>
+                                    }
+                                }
+                                <MudMenuItem OnClick="CreateTag">Create New</MudMenuItem>
+                            </MudMenu>
                         }
-                        <MudMenuItem OnClick="CreateTag">Create New</MudMenuItem>
-                    </MudMenu>
-                }
-                <MudChipSet T="string" OnClose="DeleteTag" AllClosable="Editing">
-                    @foreach (string tag in Post.Tags.Where(e => !string.IsNullOrEmpty(e)))
-                    {
-                        <MudChip Text="@tag" Value="@tag" />
-                    }
-                </MudChipSet>
-            </MudStack>
-        </MudCardContent>
-    </MudCard>
-</MudStack>
+                        else
+                        {
+                            <MudText Typo="Typo.caption">Tags</MudText>
+                        }
+                        <MudChipSet T="string" OnClose="DeleteTag" AllClosable="Editing">
+                            @foreach (string tag in Post.Tags.Where(e => !string.IsNullOrEmpty(e)))
+                            {
+                                <MudChip Text="@tag" Value="@tag" />
+                            }
+                        </MudChipSet>
+                    </MudStack>
+                </MudStack>
+            </MudCardContent>
+        </MudCard>
+    </MudItem>
+</MudGrid>
 
 @code {
     [CascadingParameter] public BlogUser User { get; set; }
     [Parameter] public BlogPost Post { get; set; }
     [Parameter] public bool Editable { get; set; }
-    [Parameter] public List<BlogCategory> Categories { get; set; } = [];
-    [Parameter] public List<BlogTag> Tags { get; set; } = [];
+    [Parameter] public Blog Blog { get; set; }
     protected override void OnInitialized()
     {
         if (Post.Status == PostStatus.Draft)
@@ -178,7 +191,7 @@
             BlogTag? tag = result.Data as BlogTag;
             if (tag != null)
             {
-                if (Tags.Any(e => e.TagTitle == tag.TagTitle))
+                if (Blog.Tags.Any(e => e.TagTitle == tag.TagTitle))
                 {
                     if (!Post.Tags.Any(e => e == tag.TagTitle))
                     {
@@ -193,5 +206,9 @@
                 }
             }
         }
+    }
+    private void BlogBack()
+    {
+        navManager.NavigateTo($"/{Blog.BlogURL}", true);
     }
 }

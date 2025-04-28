@@ -1,13 +1,13 @@
 @using Prionspace.Data.Blog
 @inject BlogService blogService
 @inject ISnackbar Snackbar
-@page "/blog/"
-@page "/blog/{blogid}"
-@page "/blog/{blogid}/{postid}"
+@page "/"
+@page "/{blogid}"
+@page "/{blogid}/{postid}"
 
-@if (ThisPost != null)
+@if (ThisPost != null && ThisBlog != null)
 {
-    <PostViewer Post="ThisPost" Editable="User != null && ThisBlog?.UserID == User.UserID" Categories="ThisBlog?.Categories ?? []" Tags="ThisBlog?.Tags ?? []" />
+    <PostViewer Post="ThisPost" Editable="User != null && ThisBlog?.UserID == User.UserID" Blog="ThisBlog" />
 }
 else if (ThisBlog != null)
 {
@@ -29,26 +29,32 @@ else if (User != null)
             <thead>
                 <tr>
                     <th>
-                        Blog
+                        My Blogs
                     </th>
                     <th>
-                        Posts
+                        Subtitle
+                    </th>
+                    <th>
+                        # Posts
                     </th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (Blog blog in UserBlogs)
+                @foreach (Blog blog in UserBlogs.OrderBy(e => e.CreatedTimeStamp))
                 {
                     <tr>
                         <td>
-                            <MudLink Href="@($"/blog/{blog.BlogURL}")">@blog.BlogTitle</MudLink>
+                            <MudLink Href="@($"/{blog.BlogURL}")">@blog.BlogTitle</MudLink>
                         </td>
                         <td>
-                            @blog.Posts.Count
+                            <MudText>@blog.BlogSubtitle</MudText>
+                        </td>
+                        <td>
+                            <MudText>@blog.Posts.Count</MudText>
                         </td>
                     </tr>
                 }
-                @if (UserBlogs.Count < 2)
+                @if (UserBlogs.Count < User.MaxBlogs)
                 {
                     <tr>
                         @if (CreatingBlog)
@@ -56,11 +62,12 @@ else if (User != null)
                             <td>
                                 <MudTextField @bind-Value="BlogTitle" Label="Title" />
                                 <MudTextField @bind-Value="BlogSubtitle" Label="Subtitle" />
-                                <MudTextField @bind-Value="BlogSlug" Label="Slug" />
+                                <MudTextField @bind-Value="BlogSlug" Label="Slug (for URL)" />
                                 <MudText Color="@(ValidSlug == "valid" ? Color.Success : Color.Error)">@ValidSlug</MudText>
                             </td>
                             <td>
-                                <MudButton Color="Color.Info" Variant="Variant.Filled" OnClick="CreateBlog">Create</MudButton>
+                                <MudButton Color="Color.Info" Variant="Variant.Filled" OnClick="CreateBlog" Disabled="@(ValidSlug != "valid")">Create</MudButton>
+                                <MudButton Color="Color.Default" Variant="Variant.Filled" OnClick="Cancel">Cancel</MudButton>
                             </td>
                         }
                         else
@@ -90,6 +97,41 @@ else if (User != null)
         </MudCard>
     }
 }
+else
+{
+    <MudLink Color="Color.Dark" Href="Account/Login">Log in to start your own blogging journey!</MudLink>
+}
+
+@if (ThisBlog == null)
+{
+    <MudTable Items="BlogPostView" Striped Bordered Filter="new Func<BlogPostView,bool>(FilterFunc1)">
+        <ToolBarContent>
+            <MudText Typo="Typo.h6">Search Blogs & Posts</MudText>
+            <MudSpacer />
+            <MudTextField @bind-Value="searchString1" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+        </ToolBarContent>
+        <HeaderContent>
+            <MudTh>Blog</MudTh>
+            <MudTh>Post</MudTh>
+            <MudTh>User</MudTh>
+            <MudTh>Preview</MudTh>
+            <MudTh>Categories</MudTh>
+            <MudTh>Tags</MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd>
+                <MudLink Href="@($"/{context.BlogURL}")">@context.BlogTitle</MudLink>
+            </MudTd>
+            <MudTd>
+                <MudLink Href="@($"/{context.BlogURL}/{context.PostURL}")">@context.PostTitle</MudLink>
+            </MudTd>
+            <MudTd>@context.UserName</MudTd>
+            <MudTd>@context.PostBodyPreview</MudTd>
+            <MudTd>@context.Categories?.Replace('|',',')</MudTd>
+            <MudTd>@context.TagRecord?.Replace('|',',')</MudTd>
+        </RowTemplate>
+    </MudTable>
+}
 
 @code {
     [CascadingParameter] public BlogUser? User { get; set; }
@@ -101,6 +143,8 @@ else if (User != null)
     private Blog? ThisBlog { get; set; } = null;
     private BlogPost? ThisPost { get; set; } = null;
     private List<Blog> UserBlogs { get; set; } = [];
+    private List<Blog> AllBlogs { get; set; } = [];
+    private List<BlogPostView> BlogPostView { get; set; } = [];
     private string? NewName;
     private string? NewSlug;
     private string? NewEmail;
@@ -113,6 +157,11 @@ else if (User != null)
             User.UserEmail = NewEmail!;
             blogService.UpdateUser(User);
         }
+    }
+    protected override void OnInitialized()
+    {
+        BlogPostView = blogService.GetBlogPostView();
+        AllBlogs = blogService.GetAllBlogs();
     }
     protected override void OnParametersSet()
     {
@@ -159,12 +208,19 @@ else if (User != null)
             UserBlogs.Add(newblog);
         }
     }
+    private void Cancel()
+    {
+        CreatingBlog = false;
+        BlogTitle = "";
+        BlogSubtitle = "";
+        BlogSlug = "";
+    }
     private string ValidSlug
     {
         get
         {
             string s = BlogSlug;
-            if (s.Length < 5)
+            if (s.Length < 4)
                 return "too short";
             if (s.Length > 20)
                 return "too long";
@@ -174,7 +230,29 @@ else if (User != null)
                 if (S2[i] < 'A' || S2[i] > 'Z')
                     return "invalid characters";
             }
+            if (AllBlogs.Select(e => e.BlogSlug.ToUpper()).Contains(S2))
+                return "that slug is taken";
             return "valid";
         }
+    }
+    private string? searchString1 = null;
+    private bool FilterFunc1(BlogPostView view) => FilterFunc(view, searchString1);
+    private bool FilterFunc(BlogPostView view, string? searchString)
+    {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return false;
+        if (view.BlogTitle?.Contains(searchString, StringComparison.OrdinalIgnoreCase) == true)
+            return true;
+        if (view.PostTitle?.Contains(searchString, StringComparison.OrdinalIgnoreCase) == true)
+            return true;
+        if (view.PostBody?.Contains(searchString, StringComparison.OrdinalIgnoreCase) == true)
+            return true;
+        if (view.UserName?.Contains(searchString, StringComparison.OrdinalIgnoreCase) == true)
+            return true;
+        if (view.Categories?.Contains(searchString, StringComparison.OrdinalIgnoreCase) == true)
+            return true;
+        if (view.TagRecord?.Contains(searchString, StringComparison.OrdinalIgnoreCase) == true)
+            return true;
+        return false;
     }
 }

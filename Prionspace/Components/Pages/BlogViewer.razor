@@ -3,30 +3,58 @@
 @inject IDialogService dialogService
 @using Prionspace.Components.Pages.Dialogs
 
-@if (User?.UserID == Blog.UserID)
-{
-    <MudButton Color="Color.Info" Variant="Variant.Filled" OnClick="AddPost">Create New Post</MudButton>
-}
+<MudStack Row>
+    @if (User?.UserID == Blog.UserID)
+    {
+        <MudButton Color="Color.Info" Variant="Variant.Filled" OnClick="AddPost">Create New Post</MudButton>
+    }
+    else
+    {
+        @if (User != null)
+        {
+            @if (User.Links.Select(e => e.BlogID).Contains(Blog.ID))
+            {
+                <MudButton StartIcon="@Icons.Material.Filled.Favorite" Color="Color.Error" Variant="Variant.Outlined" OnClick="RemoveFav">Add Favorite</MudButton>
+            }
+            else
+            {
+                <MudButton StartIcon="@Icons.Material.Filled.Favorite" Color="Color.Error" Variant="Variant.Filled" OnClick="AddFav">Add Favorite</MudButton>
+            }
+        }
+    }
+    <MudButton StartIcon="@Icons.Material.Filled.Home" Variant="Variant.Filled" Color="Color.Default" OnClick="HomeButton">Home</MudButton>
+</MudStack>
 <MudCard Elevation="2" Outlined>
-    <MudCardHeader>@Blog.BlogTitle</MudCardHeader>
+    <MudCardHeader>
+        <MudText Typo="Typo.h3">@Blog.BlogTitle</MudText>
+    </MudCardHeader>
     <MudCardContent>
-        <MudText Typo="Typo.caption">@Blog.BlogSubtitle</MudText>
+        <MudText Typo="Typo.h6"><i>@Blog.BlogSubtitle</i></MudText>
         <MudTable Items="Blog.Posts" Striped Bordered>
             <HeaderContent>
                 <MudTh>Title</MudTh>
                 <MudTh><MudTableSortLabel SortBy="new Func<BlogPost, object>(x=>x.PostDate)" InitialDirection="SortDirection.Descending">Post Date</MudTableSortLabel></MudTh>
                 <MudTh>Status</MudTh>
+                <MudTh>Categories</MudTh>
                 <MudTh>Content</MudTh>
                 <MudTh>Nav</MudTh>
             </HeaderContent>
             <RowTemplate>
                 <MudTd>
-                    <MudLink Href="@($"/blog/{Blog.BlogSlug}/{context.ID}")">@context.PostTitle</MudLink>
+                    <MudLink Href="@($"/{Blog.BlogSlug}/{context.ID}")">@context.PostTitle</MudLink>
                 </MudTd>
                 <MudTd>@context.PostDate.ToString("MM/dd/yy")</MudTd>
                 <MudTd>@context.Status</MudTd>
-                <MudTd>@context.PostBodySlug</MudTd>
-                <MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.ArrowOutward" Href="@($"/blog/{Blog.BlogURL}/{context.PostURL}")" />
+                <MudTd>
+                    <MudChipSet AllClosable="false" T="BlogCategory">
+                        @foreach (BlogCategory category in context.Categories)
+                        {
+                            <MudChip Color="@category.Color">@category.CategoryName</MudChip>
+                        }
+                    </MudChipSet>
+                </MudTd>
+                <MudTd>@context.PostBodyPreview</MudTd>
+                <MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.ArrowOutward" Href="@($"/{Blog.BlogURL}/{context.PostURL}")" />
             </RowTemplate>
             <PagerContent>
                 <MudTablePager />
@@ -35,59 +63,87 @@
     </MudCardContent>
 </MudCard>
 
-<MudCard Elevation="1">
-    <MudCardHeader>Categories</MudCardHeader>
-    <MudCardContent>
-        <MudSimpleTable Striped>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Color</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (BlogCategory category in Blog.Categories)
-                {
-                    <tr>
-                        <td>@category.CategoryName</td>
-                        <td>
-                            <MudChip Text="@category.Color.ColorName()" Color="@category.Color" T="string" />
-                        </td>
-                        <td>
-                            <MudIconButton Icon="@Icons.Material.Filled.DeleteForever" Color="Color.Error" OnClick="() => DeleteCategory(category)" />
-                        </td>
-                    </tr>
-                }
-                @if (Blog.Categories.Count < 10)
-                {
-                    <tr>
-                        <td colspan="3">
-                            <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="CreateCategory">Create New Category</MudButton>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </MudSimpleTable>
-    </MudCardContent>
-</MudCard>
+@if (User?.UserID == Blog.UserID)
+{
+    <MudGrid>
+        <MudItem xs="12" sm="12" md="6" lg="6" xl="4">
+            <MudCard Elevation="1" Outlined>
+                <MudCardHeader>Categories</MudCardHeader>
+                <MudCardContent>
+                    <MudSimpleTable Striped>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Color</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (BlogCategory category in Blog.Categories)
+                            {
+                                <tr>
+                                    <td>@category.CategoryName</td>
+                                    <td>
+                                        <MudChip Text="@category.Color.ColorName()" Color="@category.Color" T="string" />
+                                    </td>
+                                    <td>
+                                        <MudIconButton Icon="@Icons.Material.Filled.DeleteForever" Color="Color.Error" OnClick="() => DeleteCategory(category)" />
+                                    </td>
+                                </tr>
+                            }
+                            @if (Blog.Categories.Count < 10)
+                            {
+                                <tr>
+                                    <td colspan="3">
+                                        <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="CreateCategory">Create New Category</MudButton>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </MudSimpleTable>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+        <MudItem xs="12" sm="12" md="6" lg="6" xl="8">
+            <MudGrid>
+                <MudItem xs="12" sm="12" md="6" lg="6" xl="6">
+                    <MudCard Elevation="1" Outlined>
+                        <MudCardHeader>Tags</MudCardHeader>
+                        <MudCardContent>
+                            <MudButton OnClick="AddTag" Variant="Variant.Filled" Color="Color.Info">Add Tag</MudButton>
+                            <MudChipSet T="BlogTag" OnClose="DeleteTag">
+                                @foreach (BlogTag tag in Blog.Tags)
+                                {
+                                    <MudChip Text="@tag.TagTitle" Value="tag" />
+                                }
+                            </MudChipSet>
+                        </MudCardContent>
+                    </MudCard>
+                </MudItem>
+                <MudItem xs="12" sm="12" md="6" lg="6" xl="6">
+                    <MudCard>
+                        <MudCardHeader>Settings</MudCardHeader>
+                        <MudCardContent>
+                            <MudTextField @bind-Value="Blog.BlogSubtitle" />
+                            <MudCheckBox @bind-Value="Blog.PublicBlog">Public</MudCheckBox>
+                            <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="Save">Save</MudButton>
+                        </MudCardContent>
+                    </MudCard>
+                </MudItem>
+            </MudGrid>
+        </MudItem>
+    </MudGrid>
+}
 
-<MudCard Elevation="1">
-    <MudCardHeader>Tags</MudCardHeader>
-    <MudCardContent>
-        <MudButton OnClick="AddTag" Variant="Variant.Filled" Color="Color.Info">Add Tag</MudButton>
-        <MudChipSet T="BlogTag" OnClose="DeleteTag">
-            @foreach (BlogTag tag in Blog.Tags)
-            {
-                <MudChip Text="@tag.TagTitle" Value="tag" />
-            }
-        </MudChipSet>
-    </MudCardContent>
-</MudCard>
+
 
 @code {
     [CascadingParameter] public BlogUser? User { get; set; }
     [Parameter] public Blog Blog { get; set; }
+    private void HomeButton()
+    {
+        navManager.NavigateTo("/", true);
+    }
     private void AddPost()
     {
         BlogPost post = new BlogPost()
@@ -98,7 +154,7 @@
             Status = PostStatus.Draft
         };
         blogService.CreatePost(post);
-        navManager.NavigateTo($"/blog/{Blog.BlogURL}/{post.ID}", true);
+        navManager.NavigateTo($"/{Blog.BlogURL}/{post.ID}", true);
     }
     private void DeleteCategory(BlogCategory category)
     {
@@ -149,5 +205,33 @@
             Blog.Tags.Remove(tag);
             blogService.DeleteTag(tag);
         }
+    }
+    private void AddFav()
+    {
+        if (User == null)
+            return;
+        BlogLink link = new BlogLink()
+        {
+            UserID = User.UserID,
+            BlogID = Blog.ID,
+            BlogSlug = Blog.BlogSlug,
+            LinkName = Blog.BlogTitle,
+            OwnBlog = false
+        };
+        blogService.CreateLink(link);
+        User.Links.Add(link);
+    }
+    private void RemoveFav()
+    {
+        BlogLink? link = User?.Links.FirstOrDefault(e => e.BlogID == Blog.ID);
+        if (link != null)
+        {
+            blogService.DeleteLink(link);
+            User!.Links.Remove(link);
+        }
+    }
+    private void Save()
+    {
+        blogService.UpdateBlog(Blog);
     }
 }

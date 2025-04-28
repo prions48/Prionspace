@@ -575,6 +575,879 @@
       ]
     },
     {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.Core.3571i0vn41.css",
+      "AssetFile": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.Core.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10712"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z9yQ0PO9RSckfjjAfywkW8fQKZSA8u9Pz4Ed89Sr9KU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 23 May 2024 16:47:21 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3571i0vn41"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z9yQ0PO9RSckfjjAfywkW8fQKZSA8u9Pz4Ed89Sr9KU="
+        },
+        {
+          "Name": "label",
+          "Value": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.Core.css"
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.Core.css",
+      "AssetFile": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.Core.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10712"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z9yQ0PO9RSckfjjAfywkW8fQKZSA8u9Pz4Ed89Sr9KU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 23 May 2024 16:47:21 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z9yQ0PO9RSckfjjAfywkW8fQKZSA8u9Pz4Ed89Sr9KU="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.Core.css",
+      "AssetFile": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.Core.css.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000649772580"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1538"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WzQMdaQ7/wjw7tdms3qh5MHoyZgoad6xIUwXZsrFP6k=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Z9yQ0PO9RSckfjjAfywkW8fQKZSA8u9Pz4Ed89Sr9KU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 23 May 2024 16:47:20 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z9yQ0PO9RSckfjjAfywkW8fQKZSA8u9Pz4Ed89Sr9KU="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.Core.css.gz",
+      "AssetFile": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.Core.css.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1538"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WzQMdaQ7/wjw7tdms3qh5MHoyZgoad6xIUwXZsrFP6k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 23 May 2024 16:47:20 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WzQMdaQ7/wjw7tdms3qh5MHoyZgoad6xIUwXZsrFP6k="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.css",
+      "AssetFile": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "76"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Tg7jymWmpEZDk+GzCWP1g/yetNtoY3gE/Q+kFNe9aR4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Tg7jymWmpEZDk+GzCWP1g/yetNtoY3gE/Q+kFNe9aR4="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.css",
+      "AssetFile": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.css.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.012500000000"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "79"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6oY6cK9YYPSlbyva80XUfSljafwQ7Jf/OmvfOYKxIMc=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Tg7jymWmpEZDk+GzCWP1g/yetNtoY3gE/Q+kFNe9aR4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Tg7jymWmpEZDk+GzCWP1g/yetNtoY3gE/Q+kFNe9aR4="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.css.gz",
+      "AssetFile": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.css.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "79"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6oY6cK9YYPSlbyva80XUfSljafwQ7Jf/OmvfOYKxIMc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6oY6cK9YYPSlbyva80XUfSljafwQ7Jf/OmvfOYKxIMc="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.razor.js",
+      "AssetFile": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.razor.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2189"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fEHjSmV3mnyXTUsWAZMmE6K+CfZl6Fx38EYTtUrLhFE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fEHjSmV3mnyXTUsWAZMmE6K+CfZl6Fx38EYTtUrLhFE="
+        },
+        {
+          "Name": "script-type",
+          "Value": "module"
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.razor.js",
+      "AssetFile": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.razor.js.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001254705144"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "796"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Io16cw2FUBPX/lG9Scg4CYGC2B59aeAIPsp6ZhY1388=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"fEHjSmV3mnyXTUsWAZMmE6K+CfZl6Fx38EYTtUrLhFE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fEHjSmV3mnyXTUsWAZMmE6K+CfZl6Fx38EYTtUrLhFE="
+        },
+        {
+          "Name": "script-type",
+          "Value": "module"
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.razor.js.gz",
+      "AssetFile": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.razor.js.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "796"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Io16cw2FUBPX/lG9Scg4CYGC2B59aeAIPsp6ZhY1388=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Io16cw2FUBPX/lG9Scg4CYGC2B59aeAIPsp6ZhY1388="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.uky5ggktsd.css",
+      "AssetFile": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "76"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Tg7jymWmpEZDk+GzCWP1g/yetNtoY3gE/Q+kFNe9aR4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "uky5ggktsd"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Tg7jymWmpEZDk+GzCWP1g/yetNtoY3gE/Q+kFNe9aR4="
+        },
+        {
+          "Name": "label",
+          "Value": "_content/Tizzani.MudBlazor.HtmlEditor/MudHtmlEditor.css"
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/quill-blot-formatter.min.js",
+      "AssetFile": "_content/Tizzani.MudBlazor.HtmlEditor/quill-blot-formatter.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30281"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gw/hIqlf+1X7EZZlcNNg8MA5gmGZh+B9G/mdKd7DbrU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 23 May 2024 16:47:21 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gw/hIqlf+1X7EZZlcNNg8MA5gmGZh+B9G/mdKd7DbrU="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/quill-blot-formatter.min.js",
+      "AssetFile": "_content/Tizzani.MudBlazor.HtmlEditor/quill-blot-formatter.min.js.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000177999288"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5617"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wtWhjG/n53jaLgmxW8gwf2kkaYKjqHISOZn6w1FmpYk=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"gw/hIqlf+1X7EZZlcNNg8MA5gmGZh+B9G/mdKd7DbrU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 23 May 2024 16:47:20 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gw/hIqlf+1X7EZZlcNNg8MA5gmGZh+B9G/mdKd7DbrU="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/quill-blot-formatter.min.js.gz",
+      "AssetFile": "_content/Tizzani.MudBlazor.HtmlEditor/quill-blot-formatter.min.js.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5617"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wtWhjG/n53jaLgmxW8gwf2kkaYKjqHISOZn6w1FmpYk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 23 May 2024 16:47:20 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wtWhjG/n53jaLgmxW8gwf2kkaYKjqHISOZn6w1FmpYk="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/quill-blot-formatter.min.t4t4gpb7ad.js",
+      "AssetFile": "_content/Tizzani.MudBlazor.HtmlEditor/quill-blot-formatter.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30281"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gw/hIqlf+1X7EZZlcNNg8MA5gmGZh+B9G/mdKd7DbrU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 23 May 2024 16:47:21 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "t4t4gpb7ad"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gw/hIqlf+1X7EZZlcNNg8MA5gmGZh+B9G/mdKd7DbrU="
+        },
+        {
+          "Name": "label",
+          "Value": "_content/Tizzani.MudBlazor.HtmlEditor/quill-blot-formatter.min.js"
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/quill.snow.min.css",
+      "AssetFile": "_content/Tizzani.MudBlazor.HtmlEditor/quill.snow.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24615"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wn8vvu7M8T9gLBUBWy02ZdONPu2Pn0cRLpYPFTQX38w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wn8vvu7M8T9gLBUBWy02ZdONPu2Pn0cRLpYPFTQX38w="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/quill.snow.min.css",
+      "AssetFile": "_content/Tizzani.MudBlazor.HtmlEditor/quill.snow.min.css.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000264970853"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3773"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SaPB8k6hwFBvcIJbiji0TDyqvDVZx8jttDrW1amKzUs=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"wn8vvu7M8T9gLBUBWy02ZdONPu2Pn0cRLpYPFTQX38w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wn8vvu7M8T9gLBUBWy02ZdONPu2Pn0cRLpYPFTQX38w="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/quill.snow.min.css.gz",
+      "AssetFile": "_content/Tizzani.MudBlazor.HtmlEditor/quill.snow.min.css.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3773"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SaPB8k6hwFBvcIJbiji0TDyqvDVZx8jttDrW1amKzUs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SaPB8k6hwFBvcIJbiji0TDyqvDVZx8jttDrW1amKzUs="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Tizzani.MudBlazor.HtmlEditor/quill.snow.min.exxw4u5cwn.css",
+      "AssetFile": "_content/Tizzani.MudBlazor.HtmlEditor/quill.snow.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24615"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wn8vvu7M8T9gLBUBWy02ZdONPu2Pn0cRLpYPFTQX38w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 22:30:14 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "exxw4u5cwn"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-wn8vvu7M8T9gLBUBWy02ZdONPu2Pn0cRLpYPFTQX38w="
+        },
+        {
+          "Name": "label",
+          "Value": "_content/Tizzani.MudBlazor.HtmlEditor/quill.snow.min.css"
+        }
+      ]
+    },
+    {
       "Route": "app.css",
       "AssetFile": "app.css.gz",
       "Selectors": [

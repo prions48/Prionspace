@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Prionspace.Data.Users;
 
 namespace Prionspace.Data.Blog
@@ -10,6 +11,10 @@ namespace Prionspace.Data.Blog
             _context = context;
         }
         #region page load functions
+        public List<Blog> GetAllBlogs()
+        {
+            return _context.Blogs.ToList();
+        }
         public List<Blog> GetBlogsByUser(Guid userid)//when loading user page
         {
             List<Blog> blogs = _context.Blogs.Where(e => e.UserID == userid).ToList();
@@ -18,6 +23,10 @@ namespace Prionspace.Data.Blog
                 blog.Posts = _context.BlogPosts.Where(e => e.BlogID == blog.ID).ToList();
             }
             return blogs;
+        }
+        private List<BlogLink> GetLinksByUser(Guid userid)
+        {
+            return _context.BlogLinks.Where(e => e.UserID == userid).OrderBy(e => e.OrderNumber).ToList();
         }
         public Blog? GetBlogByURL(string blogid)
         {
@@ -34,6 +43,12 @@ namespace Prionspace.Data.Blog
             {
                 blog.Posts = _context.BlogPosts.Where(e => e.BlogID == blog.ID).ToList();
                 blog.Categories = _context.BlogCategories.Where(e => e.BlogID == blog.ID).ToList();
+                List<BlogPostCategory> bpcs = _context.BlogPostCategories
+                    .FromSqlRaw($"SELECT [BlogPostCategories].* FROM [BlogPostCategories] JOIN [BlogPosts] ON [BlogPosts].[ID] = [BlogPostCategories].[PostID] WHERE [BlogPosts].[BlogID] = '{blog.ID}'").ToList();
+                foreach (BlogPost post in blog.Posts)
+                {
+                    post.Categories = blog.Categories.Where(e => bpcs.Where(f => f.PostID == post.ID).Select(f => f.CategoryID).Contains(e.ID)).ToList();
+                }
                 blog.Tags = _context.BlogTags.Where(e => e.BlogID == blog.ID).ToList();
             }
             return blog;
@@ -85,11 +100,35 @@ namespace Prionspace.Data.Blog
         public void CreateBlog(Blog blog)
         {
             _context.Blogs.Add(blog);
-            _context.SaveChanges();
+            AddLink(blog); //saves changes
         }
         public void UpdateBlog(Blog blog)
         {
             _context.Blogs.Update(blog);
+            _context.SaveChanges();
+        }
+        private void AddLink(Blog newblog)
+        {
+            BlogLink link = new BlogLink() {
+                UserID = newblog.UserID,
+                BlogID = newblog.ID,
+                BlogSlug = newblog.BlogSlug,
+                LinkName = newblog.BlogTitle,
+                OrderNumber = _context.Blogs.Count(e => e.UserID == newblog.UserID)+1,
+                OwnBlog = true
+            };
+            _context.BlogLinks.Add(link);
+            _context.SaveChanges();
+        }
+        public void CreateLink(BlogLink link)
+        {
+            link.OrderNumber = _context.BlogLinks.Count(e => e.UserID == link.UserID)+1;
+            _context.BlogLinks.Add(link);
+            _context.SaveChanges();
+        }
+        public void DeleteLink(BlogLink link)
+        {
+            _context.BlogLinks.Remove(link);
             _context.SaveChanges();
         }
         #endregion
@@ -149,12 +188,17 @@ namespace Prionspace.Data.Blog
                 _context.BlogUsers.Add(bloguser);
                 _context.SaveChanges();
             }
+            bloguser.Links = GetLinksByUser(bloguser.UserID);
             return bloguser;
         }
         public void UpdateUser(BlogUser user)
         {
             _context.BlogUsers.Update(user);
             _context.SaveChanges();
+        }
+        public List<BlogPostView> GetBlogPostView()
+        {
+            return _context.BlogPostView.ToList();
         }
     }
 }

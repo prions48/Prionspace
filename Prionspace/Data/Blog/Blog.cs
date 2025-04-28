@@ -10,6 +10,8 @@ namespace Prionspace.Data.Blog
         public string BlogTitle { get; set; }
         public string BlogSubtitle { get; set; }
         public string BlogSlug { get; set; }
+        public DateTime? CreatedTimeStamp { get; set; } = DateTime.Now;
+        public bool PublicBlog { get; set; } = true;
         public string BlogURL
         {
             get

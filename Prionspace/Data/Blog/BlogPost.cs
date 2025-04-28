@@ -17,15 +17,15 @@ namespace Prionspace.Data.Blog
                 return (MarkupString)PostBody;
             }
         }
-        public string PostBodySlug
+        public string PostBodyPreview
         {
             get
             {
                 if (string.IsNullOrEmpty(PostBody))
                     return "";
-                if (PostBody.Length < 30)
+                if (PostBody.Length < 50)
                     return PostBody;
-                return PostBody.Substring(0,30);
+                return PostBody.Substring(0,50);
             }
         }
         public string PostSlug { get; set; } = "";

@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Prionspace.Data.Users;
 
 namespace Prionspace.Data.Blog
@@ -9,6 +10,8 @@ namespace Prionspace.Data.Blog
         public string UserName { get; set; } = "";
         public string UserEmail { get; set; } = "";
         public string UserSlug { get; set; } = "";
+        public int MaxBlogs { get; set; } = 2;
+        [NotMapped] public List<BlogLink> Links { get; set; } = [];
         public BlogUser(Auth0User user)
         {
             UserID = user.UserID;
