@@ -7,7 +7,7 @@
 
 @if (ThisPost != null)
 {
-    <PostViewer Post="ThisPost" Editable="User != null && ThisBlog?.UserID == User.UserID" Categories="ThisBlog?.Categories ?? []" />
+    <PostViewer Post="ThisPost" Editable="User != null && ThisBlog?.UserID == User.UserID" Categories="ThisBlog?.Categories ?? []" Tags="ThisBlog?.Tags ?? []" />
 }
 else if (ThisBlog != null)
 {

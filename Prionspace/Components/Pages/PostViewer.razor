@@ -1,3 +1,5 @@
+@using Prionspace.Components.Pages.Dialogs
+@inject IDialogService dialogService
 @inject BlogService blogService
 
 <MudStack>
@@ -39,27 +41,46 @@
         </MudCardActions>
     </MudCard>
     <MudCard Outlined>
-        <MudCardHeader>Categories & Tags</MudCardHeader>
         <MudCardContent>
-            @if (Post.Categories.Count > 0)
-            {
-                <MudStack Row>
-                    <MudChipSet T="BlogCategory" OnClose="DeleteCategory" AllClosable="Editing">
-                        @foreach (BlogCategory category in Post.Categories)
-                        {
-                            <MudChip Value="category" Color="@category.Color" Text="@category.CategoryName" Variant="Variant.Filled" />
-                        }
-                    </MudChipSet>
-                </MudStack>
-            }
             <MudStack Row>
-                <MudSelect @bind-Value="SelectedCategory" T="BlogCategory">
-                    @foreach (BlogCategory category in Categories.Where(e => !Post.Categories.Select(f => f.ID).Contains(e.ID)))
+                <MudText Typo="Typo.caption">Categories</MudText>
+                @if (Editing)
+                {
+                    <MudMenu Label="Add Category">
+                        @foreach (BlogCategory category in Categories.Where(e => !Post.Categories.Select(f => f.ID).Contains(e.ID)))
+                        {
+                            <MudMenuItem OnClick="() => AddCategory(category)"><MudText Color="@category.Color">@category.CategoryName</MudText></MudMenuItem>
+                        }
+                    </MudMenu>
+                }
+                <MudChipSet T="BlogCategory" OnClose="DeleteCategory" AllClosable="Editing">
+                    @foreach (BlogCategory category in Post.Categories)
                     {
-                        <MudSelectItem Value="@category">@category.CategoryName</MudSelectItem>
+                        <MudChip Value="category" Color="@category.Color" Text="@category.CategoryName" Variant="Variant.Filled" />
                     }
-                </MudSelect>
-                <MudButton OnClick="AddCategory" Variant="Variant.Filled" Color="Color.Info">Add</MudButton>
+                </MudChipSet>
+            </MudStack>
+            <MudStack Row>
+                <MudText Typo="Typo.caption">Tags</MudText>
+                @if (Editing)
+                {
+                    <MudMenu Label="Add Tag">
+                        @foreach (BlogTag tag in Tags)
+                        {
+                            @if (!Post.Tags.Any(e => e == tag.TagTitle))
+                            {
+                                <MudMenuItem OnClick="() => AddTag(tag)">@tag.TagTitle</MudMenuItem>
+                            }
+                        }
+                        <MudMenuItem OnClick="CreateTag">Create New</MudMenuItem>
+                    </MudMenu>
+                }
+                <MudChipSet T="string" OnClose="DeleteTag" AllClosable="Editing">
+                    @foreach (string tag in Post.Tags.Where(e => !string.IsNullOrEmpty(e)))
+                    {
+                        <MudChip Text="@tag" Value="@tag" />
+                    }
+                </MudChipSet>
             </MudStack>
         </MudCardContent>
     </MudCard>
@@ -70,6 +91,7 @@
     [Parameter] public BlogPost Post { get; set; }
     [Parameter] public bool Editable { get; set; }
     [Parameter] public List<BlogCategory> Categories { get; set; } = [];
+    [Parameter] public List<BlogTag> Tags { get; set; } = [];
     protected override void OnInitialized()
     {
         if (Post.Status == PostStatus.Draft)
@@ -106,19 +128,16 @@
         Editing = true;
     }
     BlogCategory? SelectedCategory = null;
-    private void AddCategory()
+    private void AddCategory(BlogCategory category)
     {
-        if (SelectedCategory != null)
+        BlogPostCategory newpc = new BlogPostCategory()
         {
-            BlogPostCategory newpc = new BlogPostCategory()
-            {
-                PostID = Post.ID,
-                CategoryID = SelectedCategory.ID
-            };
-            blogService.CreatePostCategory(newpc);
-            Post.Categories.Add(SelectedCategory);
-            SelectedCategory = null;
-        }
+            PostID = Post.ID,
+            CategoryID = category.ID
+        };
+        blogService.CreatePostCategory(newpc);
+        Post.Categories.Add(category);
+        SelectedCategory = null;
     }
     private void DeleteCategory(MudChip<BlogCategory> chip)
     {
@@ -129,6 +148,47 @@
         {
             Post.Categories.Remove(category);
             blogService.DeletePostCategory(Post.ID, category.ID);
+        }
+    }
+    private void AddTag(BlogTag tag)
+    {
+        Post.TagRecord += "|" + tag.TagTitle;
+        blogService.UpdatePost(Post);
+    }
+    private void DeleteTag(MudChip<string> chip)
+    {
+        if (chip.Value is string s)
+        {
+            Post.TagRecord = string.Join("|",Post.Tags.Where(e => e != s));
+            blogService.UpdatePost(Post);
+        }
+    }
+    private async Task CreateTag()
+    {
+        var options = new DialogOptions();
+        options.CloseOnEscapeKey = true;
+        var parameters = new DialogParameters();
+        var dialog = dialogService.Show<TagCreator>("Create Tag", parameters, options);
+        var result = await dialog.Result;
+        if (result != null && !result.Canceled)
+        {
+            BlogTag? tag = result.Data as BlogTag;
+            if (tag != null)
+            {
+                if (Tags.Any(e => e.TagTitle == tag.TagTitle))
+                {
+                    if (!Post.Tags.Any(e => e == tag.TagTitle))
+                    {
+                        Post.TagRecord += "|" + tag.TagTitle;
+                    }
+                }
+                else
+                {
+                    tag.BlogID = Post.BlogID;
+                    blogService.CreateTag(tag);
+                    Post.TagRecord += "|" + tag.TagTitle;
+                }
+            }
         }
     }
 }

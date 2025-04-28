@@ -35,7 +35,7 @@
     </MudCardContent>
 </MudCard>
 
-<MudCard>
+<MudCard Elevation="1">
     <MudCardHeader>Categories</MudCardHeader>
     <MudCardContent>
         <MudSimpleTable Striped>
@@ -52,7 +52,7 @@
                     <tr>
                         <td>@category.CategoryName</td>
                         <td>
-                            <MudChip Text="@category.Color.ToString()" Color="@category.Color" T="string" />
+                            <MudChip Text="@category.Color.ColorName()" Color="@category.Color" T="string" />
                         </td>
                         <td>
                             <MudIconButton Icon="@Icons.Material.Filled.DeleteForever" Color="Color.Error" OnClick="() => DeleteCategory(category)" />
@@ -69,6 +69,19 @@
                 }
             </tbody>
         </MudSimpleTable>
+    </MudCardContent>
+</MudCard>
+
+<MudCard Elevation="1">
+    <MudCardHeader>Tags</MudCardHeader>
+    <MudCardContent>
+        <MudButton OnClick="AddTag" Variant="Variant.Filled" Color="Color.Info">Add Tag</MudButton>
+        <MudChipSet T="BlogTag" OnClose="DeleteTag">
+            @foreach (BlogTag tag in Blog.Tags)
+            {
+                <MudChip Text="@tag.TagTitle" Value="tag" />
+            }
+        </MudChipSet>
     </MudCardContent>
 </MudCard>
 
@@ -108,6 +121,33 @@
                 blogService.CreateCategory(category);
                 Blog.Categories.Add(category);
             }
+        }
+    }
+    private async Task AddTag()
+    {
+        var options = new DialogOptions();
+        options.CloseOnEscapeKey = true;
+        var parameters = new DialogParameters();
+        var dialog = dialogService.Show<TagCreator>("Create Tag", parameters, options);
+        var result = await dialog.Result;
+        if (result != null && !result.Canceled)
+        {
+            BlogTag? tag = result.Data as BlogTag;
+            if (tag != null)
+            {
+                tag.BlogID = Blog.ID;
+                blogService.CreateTag(tag);
+                Blog.Tags.Add(tag);
+            }
+        }
+    }
+    private void DeleteTag(MudChip<BlogTag> chip)
+    {
+        BlogTag? tag = chip.Value as BlogTag;
+        if (tag != null)
+        {
+            Blog.Tags.Remove(tag);
+            blogService.DeleteTag(tag);
         }
     }
 }

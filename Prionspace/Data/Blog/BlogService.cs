@@ -34,6 +34,7 @@ namespace Prionspace.Data.Blog
             {
                 blog.Posts = _context.BlogPosts.Where(e => e.BlogID == blog.ID).ToList();
                 blog.Categories = _context.BlogCategories.Where(e => e.BlogID == blog.ID).ToList();
+                blog.Tags = _context.BlogTags.Where(e => e.BlogID == blog.ID).ToList();
             }
             return blog;
         }
@@ -125,6 +126,16 @@ namespace Prionspace.Data.Blog
         public void DeleteCategory(BlogCategory category)
         {
             _context.BlogCategories.Remove(category);
+            _context.SaveChanges();
+        }
+        public void CreateTag(BlogTag tag)
+        {
+            _context.BlogTags.Add(tag);
+            _context.SaveChanges();
+        }
+        public void DeleteTag(BlogTag tag)
+        {
+            _context.BlogTags.Remove(tag);
             _context.SaveChanges();
         }
         #endregion

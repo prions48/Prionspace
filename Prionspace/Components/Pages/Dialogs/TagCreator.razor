@@ -1,0 +1,34 @@
+<MudDialog>
+    <DialogContent>
+        <MudSimpleTable Striped Bordered>
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Setting</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Title</td>
+                    <td>
+                        <MudTextField @bind-Value="Tag.TagTitle" Label="Title" />
+                    </td>
+                </tr>
+            </tbody>
+        </MudSimpleTable>
+    </DialogContent>
+    <DialogActions>
+        <MudButton Color="Color.Info" Variant="Variant.Filled" Disabled="string.IsNullOrEmpty(Tag.TagTitle) || Tag.TagTitle.Contains('|')" OnClick="Submit">Create</MudButton>
+        <MudButton Color="Color.Default" Variant="Variant.Filled" OnClick="Cancel">Cancel</MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+    [CascadingParameter] MudDialogInstance MudDialog { get; set; }
+    BlogTag Tag { get; set; } = new BlogTag();
+    void Submit()
+    {
+        MudDialog.Close(DialogResult.Ok(Tag));
+    }
+    void Cancel() => MudDialog.Close(DialogResult.Cancel());
+}
