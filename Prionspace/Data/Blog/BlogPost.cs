@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Components;
 
 namespace Prionspace.Data.Blog
 {
@@ -9,6 +10,13 @@ namespace Prionspace.Data.Blog
         public Guid BlogID { get; set; }
         public string PostTitle { get; set; } = "";
         public string PostBody { get; set; } = "";
+        public MarkupString PostBodyHTML
+        {
+            get
+            {
+                return (MarkupString)PostBody;
+            }
+        }
         public string PostBodySlug
         {
             get

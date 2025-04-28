@@ -1,6 +1,7 @@
 @using Prionspace.Components.Pages.Dialogs
 @inject IDialogService dialogService
 @inject BlogService blogService
+@using Tizzani.MudBlazor.HtmlEditor
 
 <MudStack>
     <MudCard Elevation="1" Outlined>
@@ -17,11 +18,13 @@
         <MudCardContent>
             @if (Editing)
             {
-                <MudTextField @bind-Value="EditText" Lines="10" Label="Post Body" />
+                <MudHtmlEditor @bind-Html="EditText" Outlined Resizable Placeholder="Write about something here!">
+                    <MudHtmlToolbarOptions InsertImage="false" InsertLink="false" CodeBlock="false" />
+                </MudHtmlEditor>
             }
             else
             {
-                @Post.PostBody
+                @Post.PostBodyHTML
             }
         </MudCardContent>
         <MudCardActions>

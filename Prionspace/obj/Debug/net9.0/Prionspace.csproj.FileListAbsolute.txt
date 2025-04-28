@@ -209,3 +209,9 @@
 /Users/prions/Coding/Prionspace/Prionspace/obj/Debug/net9.0/Prionspace.pdb
 /Users/prions/Coding/Prionspace/Prionspace/obj/Debug/net9.0/Prionspace.genruntimeconfig.cache
 /Users/prions/Coding/Prionspace/Prionspace/obj/Debug/net9.0/ref/Prionspace.dll
+/Users/prions/Coding/Prionspace/Prionspace/bin/Debug/net9.0/Tizzani.MudBlazor.HtmlEditor.dll
+/Users/prions/Coding/Prionspace/Prionspace/obj/Debug/net9.0/compressed/qaujcekjou-uky5ggktsd.gz
+/Users/prions/Coding/Prionspace/Prionspace/obj/Debug/net9.0/compressed/m04s7zkvq0-3571i0vn41.gz
+/Users/prions/Coding/Prionspace/Prionspace/obj/Debug/net9.0/compressed/sz33cyat2r-wpyfdpjww5.gz
+/Users/prions/Coding/Prionspace/Prionspace/obj/Debug/net9.0/compressed/uwhmh6u0w5-t4t4gpb7ad.gz
+/Users/prions/Coding/Prionspace/Prionspace/obj/Debug/net9.0/compressed/8za2bv62d4-exxw4u5cwn.gz
