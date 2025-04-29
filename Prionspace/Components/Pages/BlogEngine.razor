@@ -7,7 +7,18 @@
 
 @if (ThisPost != null && ThisBlog != null)
 {
-    <PostViewer Post="ThisPost" Editable="User != null && ThisBlog?.UserID == User.UserID" Blog="ThisBlog" />
+    @if (ThisBlog.UserID == User?.UserID || (ThisPost.PublicViewable && ThisBlog.PublicBlog))
+    {
+        <PostViewer Post="ThisPost" Editable="User != null && ThisBlog?.UserID == User.UserID" Blog="ThisBlog" />
+    }
+    else if (!ThisBlog.PublicBlog)
+    {
+        <MudText Typo="Typo.h6">This blog is not publicly viewable.</MudText>
+    }
+    else//not public viewable
+    {
+        <MudText Typo="Typo.h6">This post is not publicly viewable.</MudText>
+    }
 }
 else if (ThisBlog != null)
 {
@@ -137,8 +148,6 @@ else
     [CascadingParameter] public BlogUser? User { get; set; }
     [Parameter] public string? blogid { get; set; }
     [Parameter] public string? postid { get; set; }
-    private Guid loadedpost = Guid.Empty;
-    private Guid loadedblog = Guid.Empty;
     private Guid userid = Guid.Empty;
     private Blog? ThisBlog { get; set; } = null;
     private BlogPost? ThisPost { get; set; } = null;
@@ -163,6 +172,8 @@ else
         BlogPostView = blogService.GetBlogPostView();
         AllBlogs = blogService.GetAllBlogs();
     }
+    private string? currentblog = null;
+    private string? currentpost = null;
     protected override void OnParametersSet()
     {
         if (User != null && userid != User.UserID)
@@ -170,23 +181,33 @@ else
             UserBlogs = blogService.GetBlogsByUser(User.UserID);
             userid = User.UserID;
         }
-        if (loadedpost != ThisPost?.ID || loadedblog != ThisBlog?.ID)
+        if (currentpost != postid || currentblog != blogid)
         {
+            currentpost = postid;
+            currentblog = blogid;
             if (postid != null)
             {
                 ThisPost = blogService.GetPostByURL(postid, User);
                 if (ThisPost != null && !string.IsNullOrEmpty(blogid))
                 {
                     ThisBlog = blogService.GetBlogByURL(blogid);
-                    loadedpost = ThisPost.ID;
-                    loadedblog = ThisBlog?.ID ?? Guid.Empty;
+                }
+                else
+                {
+                    ThisBlog = null;
                 }
             }
             else if (blogid != null)
             {
                 ThisBlog = blogService.GetBlogByURL(blogid);
-                loadedblog = ThisBlog?.ID ?? Guid.Empty;
+                ThisPost = null;
             }
+            else
+            {
+                ThisPost = null;
+                ThisBlog = null;
+            }
+            StateHasChanged();
         }
     }
     bool CreatingBlog = false;
