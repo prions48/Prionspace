@@ -14,7 +14,7 @@
         {
             @if (User.Links.Select(e => e.BlogID).Contains(Blog.ID))
             {
-                <MudButton StartIcon="@Icons.Material.Filled.Favorite" Color="Color.Error" Variant="Variant.Outlined" OnClick="RemoveFav">Add Favorite</MudButton>
+                <MudButton StartIcon="@Icons.Material.Filled.FavoriteBorder" Color="Color.Error" Variant="Variant.Outlined" OnClick="RemoveFav">Remove Favorite</MudButton>
             }
             else
             {
@@ -41,7 +41,7 @@
             </HeaderContent>
             <RowTemplate>
                 <MudTd>
-                    <MudLink Href="@($"/{Blog.BlogSlug}/{context.ID}")">@context.PostTitle</MudLink>
+                    <MudLink Href="@($"blog/{Blog.BlogSlug}/{context.ID}")">@context.PostTitle</MudLink>
                 </MudTd>
                 <MudTd>@context.PostDate.ToString("MM/dd/yy")</MudTd>
                 <MudTd>@context.Status</MudTd>
@@ -54,7 +54,7 @@
                     </MudChipSet>
                 </MudTd>
                 <MudTd>@context.PostBodyPreview</MudTd>
-                <MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.ArrowOutward" Href="@($"/{Blog.BlogURL}/{context.PostURL}")" />
+                <MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.ArrowOutward" Href="@($"blog/{Blog.BlogURL}/{context.PostURL}")" />
             </RowTemplate>
             <PagerContent>
                 <MudTablePager />
@@ -142,7 +142,7 @@
     [Parameter] public Blog Blog { get; set; }
     private void HomeButton()
     {
-        navManager.NavigateTo("/", true);
+        navManager.NavigateTo("blog", true);
     }
     private void AddPost()
     {
@@ -154,7 +154,7 @@
             Status = PostStatus.Draft
         };
         blogService.CreatePost(post);
-        navManager.NavigateTo($"/{Blog.BlogURL}/{post.ID}", true);
+        navManager.NavigateTo($"blog/{Blog.BlogURL}/{post.ID}", true);
     }
     private void DeleteCategory(BlogCategory category)
     {

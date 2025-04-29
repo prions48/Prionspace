@@ -1,9 +1,9 @@
 @using Prionspace.Data.Blog
 @inject BlogService blogService
 @inject ISnackbar Snackbar
-@page "/"
-@page "/{blogid}"
-@page "/{blogid}/{postid}"
+@page "/blog/"
+@page "/blog/{blogid}"
+@page "/blog/{blogid}/{postid}"
 
 @if (ThisPost != null && ThisBlog != null)
 {
@@ -44,7 +44,7 @@ else if (User != null)
                 {
                     <tr>
                         <td>
-                            <MudLink Href="@($"/{blog.BlogURL}")">@blog.BlogTitle</MudLink>
+                            <MudLink Href="@($"blog/{blog.BlogURL}")">@blog.BlogTitle</MudLink>
                         </td>
                         <td>
                             <MudText>@blog.BlogSubtitle</MudText>
@@ -120,10 +120,10 @@ else
         </HeaderContent>
         <RowTemplate>
             <MudTd>
-                <MudLink Href="@($"/{context.BlogURL}")">@context.BlogTitle</MudLink>
+                <MudLink Href="@($"blog/{context.BlogURL}")">@context.BlogTitle</MudLink>
             </MudTd>
             <MudTd>
-                <MudLink Href="@($"/{context.BlogURL}/{context.PostURL}")">@context.PostTitle</MudLink>
+                <MudLink Href="@($"blog/{context.BlogURL}/{context.PostURL}")">@context.PostTitle</MudLink>
             </MudTd>
             <MudTd>@context.UserName</MudTd>
             <MudTd>@context.PostBodyPreview</MudTd>

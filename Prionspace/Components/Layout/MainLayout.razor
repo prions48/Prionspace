@@ -27,6 +27,7 @@
             @* Put logo here?*@
             <br />
             <MudNavLink Href="/">Home</MudNavLink>
+            <MudNavLink Href="/blog">Blogs</MudNavLink>
             @if (User != null)
             {
                 @if (User.Links.Any(e => e.OwnBlog))
@@ -34,7 +35,7 @@
                     <MudNavGroup Title="My Blogs" Expanded>
                         @foreach (BlogLink link in User.Links.Where(e => e.OwnBlog))
                         {
-                            <MudNavLink Href="@($"/{link.BlogSlug}")">@link.LinkName</MudNavLink>
+                            <MudNavLink Href="@($"blog/{link.BlogSlug}")">@link.LinkName</MudNavLink>
                         }
                     </MudNavGroup>
                 }
@@ -43,7 +44,7 @@
                     <MudNavGroup Title="Others" Expanded>
                         @foreach (BlogLink link in User.Links.Where(e => !e.OwnBlog))
                         {
-                            <MudNavLink Href="@($"/{link.BlogSlug}")">@link.LinkName</MudNavLink>
+                            <MudNavLink Href="@($"blog/{link.BlogSlug}")">@link.LinkName</MudNavLink>
                         }
                     </MudNavGroup>
                 }
