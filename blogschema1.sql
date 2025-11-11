@@ -1,0 +1,66 @@
+CREATE TABLE Blogs (
+    ID UNIQUEIDENTIFIER NOT NULL,
+    UserID UNIQUEIDENTIFIER NOT NULL,
+    BlogTitle NVARCHAR(1000) NOT NULL,
+    BlogSubtitle NVARCHAR(1000) NOT NULL,
+    BlogSlug NVARCHAR(50) NOT NULL,
+    PRIMARY KEY (ID)
+);
+CREATE TABLE BlogUsers (
+    UserID UNIQUEIDENTIFIER NOT NULL,
+    UserName NVARCHAR(1000) NOT NULL,
+    UserEmail NVARCHAR(1000) NOT NULL,
+    UserSlug NVARCHAR(50) NOT NULL,
+    PRIMARY KEY (UserID)
+);
+CREATE TABLE BlogPosts (
+    ID UNIQUEIDENTIFIER NOT NULL,
+    BlogID UNIQUEIDENTIFIER NOT NULL,
+    PostTitle NVARCHAR(1000) NOT NULL,
+    PostBody NVARCHAR(MAX) NOT NULL,
+    PostUser NVARCHAR(1000) NOT NULL,
+    PostSlug NVARCHAR(50) NOT NULL,
+    PostDate DATETIME NOT NULL,
+    Status INT NOT NULL,
+    TagRecord NVARCHAR(4000) NULL,
+    PRIMARY KEY (ID)
+);
+CREATE TABLE BlogPostComments (
+    ID UNIQUEIDENTIFIER NOT NULL,
+    BlogPostID UNIQUEIDENTIFIER NOT NULL,
+    ParentCommentID UNIQUEIDENTIFIER NULL,
+    CommentUser NVARCHAR(1000) NOT NULL,
+    CommentText NVARCHAR(4000) NOT NULL,
+    PostDate DATETIME NOT NULL,
+    PRIMARY KEY (ID)
+);
+CREATE TABLE BlogPostCategories (
+    ID UNIQUEIDENTIFIER NOT NULL,
+    PostID UNIQUEIDENTIFIER NOT NULL,
+    CategoryID UNIQUEIDENTIFIER NOT NULL,
+    PRIMARY KEY (ID)
+);
+CREATE TABLE BlogCategories (
+    ID UNIQUEIDENTIFIER NOT NULL,
+    BlogID UNIQUEIDENTIFIER NOT NULL,
+    CategoryName NVARCHAR(1000) NOT NULL,
+    Color INT NOT NULL,
+    PRIMARY KEY (ID)
+);
+CREATE TABLE BlogTags (
+    ID UNIQUEIDENTIFIER NOT NULL,
+    BlogID UNIQUEIDENTIFIER NOT NULL,
+    TagTitle NVARCHAR(1000) NOT NULL,
+    PRIMARY KEY (ID)
+);
+CREATE VIEW BlogPostView AS
+SELECT Blogs.BlogSlug,BlogID,BlogPosts.PostSlug,BlogPosts.ID AS PostID,
+Blogs.BlogTitle,
+BlogPosts.PostTitle,BlogPosts.PostBody,BlogPosts.PostDate,
+Cats.Categories,
+BlogPosts.TagRecord,BlogUsers.UserName
+FROM Blogs
+JOIN BlogPosts ON Blogs.ID=BlogPosts.BlogID
+JOIN BlogUsers ON BlogUsers.UserID=Blogs.UserID
+LEFT JOIN (SELECT BlogPostCategories.PostID,STRING_AGG(CategoryName,'|') AS Categories FROM BlogCategories JOIN BlogPostCategories ON BlogPostCategories.CategoryID=BlogCategories.ID GROUP BY BlogPostCategories.PostID) AS Cats ON Cats.PostID=BlogPosts.ID
+WHERE BlogPosts.Status=3 AND Blogs.PublicBlog=1

@@ -29,8 +29,15 @@
         <MudText Typo="Typo.h3">@Blog.BlogTitle</MudText>
     </MudCardHeader>
     <MudCardContent>
-        <MudText Typo="Typo.h6"><i>@Blog.BlogSubtitle</i></MudText>
-        <MudTable Items="Blog.Posts" Striped Bordered>
+        <MudTable Items="Blog.Posts.Where(e => string.IsNullOrWhiteSpace(Category) || e.Categories.Any(f => f.CategoryName.Contains(Category, StringComparison.OrdinalIgnoreCase)))" Striped Bordered>
+            <ToolBarContent>
+                <MudText Typo="Typo.h6"><i>@Blog.BlogSubtitle</i></MudText>
+                <MudSpacer />
+                @if (!string.IsNullOrWhiteSpace(Category))
+                {
+                    <MudButton Variant="Variant.Outlined"Color="Color.Info" OnClick="ClearCategory">Clear Category @Category</MudButton>
+                }
+            </ToolBarContent>
             <HeaderContent>
                 <MudTh>Title</MudTh>
                 <MudTh><MudTableSortLabel SortBy="new Func<BlogPost, object>(x=>x.PostDate)" InitialDirection="SortDirection.Descending">Post Date</MudTableSortLabel></MudTh>
@@ -49,7 +56,7 @@
                     <MudChipSet AllClosable="false" T="BlogCategory">
                         @foreach (BlogCategory category in context.Categories)
                         {
-                            <MudChip Color="@category.Color">@category.CategoryName</MudChip>
+                            <MudChip Color="@category.Color" OnClick="() => NavCategory(category)">@category.CategoryName</MudChip>
                         }
                     </MudChipSet>
                 </MudTd>
@@ -87,6 +94,7 @@
                                         <MudChip Text="@category.Color.ColorName()" Color="@category.Color" T="string" />
                                     </td>
                                     <td>
+                                        <MudIconButton Icon="@Icons.Material.Filled.ArrowOutward" Color="Color.Primary" OnClick="() => NavCategory(category)" />
                                         <MudIconButton Icon="@Icons.Material.Filled.DeleteForever" Color="Color.Error" OnClick="() => DeleteCategory(category)" />
                                     </td>
                                 </tr>
@@ -140,6 +148,7 @@
 @code {
     [CascadingParameter] public BlogUser? User { get; set; }
     [Parameter] public Blog Blog { get; set; }
+    [Parameter] public string? Category { get; set; }
     private void HomeButton()
     {
         navManager.NavigateTo("blog", true);
@@ -160,6 +169,14 @@
     {
         Blog.Categories.Remove(category);
         blogService.DeleteCategory(category);
+    }
+    private void NavCategory(BlogCategory category)
+    {
+        navManager.NavigateTo($"/blog/{Blog.BlogURL}/?cat={category.CategoryName}");
+    }
+    private void ClearCategory()
+    {
+        navManager.NavigateTo($"/blog/{Blog.BlogURL}");
     }
     private async Task CreateCategory()
     {

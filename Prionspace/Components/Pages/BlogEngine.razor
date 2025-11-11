@@ -22,7 +22,7 @@
 }
 else if (ThisBlog != null)
 {
-    <BlogViewer Blog="ThisBlog" />
+    <BlogViewer Blog="ThisBlog" Category="@Category" />
 }
 else if (!string.IsNullOrEmpty(blogid))
 {
@@ -145,6 +145,8 @@ else
 }
 
 @code {
+    [SupplyParameterFromQuery(Name = "cat")]
+    private string? Category { get; set; }
     [CascadingParameter] public BlogUser? User { get; set; }
     [Parameter] public string? blogid { get; set; }
     [Parameter] public string? postid { get; set; }
