@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Prionspace")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3995b2a4b61d8519a53ca54550422e02512b8e0d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4fd8f6ba37619213b0d5c733c53281d3c3a9bfe7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Prionspace")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Prionspace")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

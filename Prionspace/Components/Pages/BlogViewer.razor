@@ -3,6 +3,8 @@
 @inject IDialogService dialogService
 @using Prionspace.Components.Pages.Dialogs
 
+<PageTitle>@Blog.BlogTitle</PageTitle>
+
 <MudStack Row>
     @if (User?.UserID == Blog.UserID)
     {
